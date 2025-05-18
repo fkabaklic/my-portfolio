@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faris Kabaklić - Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <body>
+        <nav>
+            <div class="nav-left" onclick="goBack()">[ GO BACK ]</div>
+            <div class="nav-right">
+            <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+            <div class="menu" onclick="toggleMenu()">MENU</div>
+            </div>
+        </nav>
+
+        <div id="main-content">
+            <div class="container">
+                <div class="text-content">
+                    <h1>HealthSync</h1>
+                        <h2>Glucose Monitor App</h2>
+            <div class="tags">
+                <div class="tag">Web</div>
+                <div class="tag">Mobile</div>
+                <div class="tag">Branding</div>
+            </div>
+            <div class="about">
+                <h3>ABOUT</h3>
+                <p>Healthsync was my capstone project my IT 251 course that emphasized responsive design. We were required to fully develop a website utilizing only flexbox and grid layout methods. I decided to create mine for a fictional company named Healthsync, which specializes in a continuous glucose monitor (CGM) device aimed at empowering individuals with diabetes as well as health and fitness enthusiasts.  </p>
+            </div>
+            <a href="#" class="view-button">View Project</a>
+                </div>
+                <div class="image-container">
+                    <img src="img/healthsync_full.png" alt="HealthSync Project Image">
+                </div>
+                <div class="image-container">
+                    <img src="img/healthsync_plans.png" alt="HealthSync Project Image">
+                </div>
+                <div class="image-container">
+                    <img src="img/healthsync_resources.png" alt="HealthSync Project Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-overlay" id="menuOverlay">
+            <div class="close-btn" onclick="toggleMenu()">&times;</div>
+            <a href="index.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <script>
+            function goBack() {
+            window.history.back();
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function toggleMenu() {
+            const overlay = document.getElementById('menuOverlay');
+            const main = document.getElementById('main-content');
+            overlay.classList.toggle('active');
+            main.style.display = main.style.display === 'none' ? 'block' : 'none';
+        }
+        </script>
+</body>
+</html>

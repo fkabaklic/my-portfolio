@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faris Kabaklić - Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="Logo" class="logo-img">
+        </a>
+        <div class="nav-right">
+            <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+            <div class="menu" onclick="toggleMenu()">MENU</div>
+        </div>
+    </nav>
+
+    <div id="main-content">
+        <div class="headline">
+        
+        <h1>CREATIVE & FRONT-END DEVELOPER</h1>
+    </div>
+
+    <div class="projects">
+        <a href="healthsync.html">
+            <div class="card">
+                <div class="card-tags">
+                    <div class="tag">Web</div>
+                    <div class="tag">Responsive</div>
+                    <div class="tag">Branding</div>
+                </div>
+                <h3>Healthsync</h3>
+                <img src="img/healthsync.jpg" alt="HealthSync project">
+            </div>
+        </a>
+        <a href="ChopShop.html">
+            <div class="card">
+                <div class="card-tags">
+                    <div class="tag">Web</div>
+                    <div class="tag">Responsive</div>
+                </div>
+                <h3>ChopShop</h3>
+                <img src="img/chopshop.jpg" alt="ChopShop Project">
+            </div>
+        </a>
+        <a href="vroom.html">
+            <div class="card">
+                <div class="card-tags">
+                    <div class="tag">Web</div>
+                    <div class="tag">Node.JS</div>
+                </div>
+                <h3>Vroom</h3>
+                <img src="img/vroom.jpg" alt="Vroom Project">
+            </div>
+        </a>
+        <a href="spoonful.html">
+            <div class="card">
+                <div class="card-tags">
+                    <div class="tag">Web</div>
+                    <div class="tag">Javascript</div>
+                </div>
+                <h3>SpoonfulMeals</h3>
+                <img src="img/spoonful.jpg" alt="SpoonfulMeals Project">
+            </div>
+        </a>
+    </div>
+   
+    <div class="headline skills-headline">
+        <p></p>
+        <h1>TOOLBOX</h1>
+    </div>
+    
+
+    <div class="skills-floating-container">
+        <div class="skills-floating-icon" style="top:5%; left:20%;"><img src="img/html.svg" alt="html"></div>
+        <div class="skills-floating-icon" style="top:10%; right:25%;"><img src="img/css.svg" alt="css"></div>
+        <div class="skills-floating-icon" style="top:40%; left:5%;"><img src="img/js.svg" alt="js"></div>
+        <div class="skills-floating-icon" style="top:60%; right:10%;"><img src="img/photoshop.svg" alt="Photoshop"></div>
+        <div class="skills-floating-icon" style="bottom:10%; left:20%;"><img src="img/illustrator.svg" alt="Illustrator"></div>
+        <div class="skills-floating-icon" style="bottom:15%; right:20%;"><img src="img/python.svg" alt="Python"></div>
+        <div class="skills-floating-icon" style="top:25%; left:40%;"><img src="img/NodeJS.svg" alt="node"></div>
+        <div class="skills-floating-icon" style="bottom:25%; right:40%;"><img src="img/indesign.svg" alt="indesign"></div>
+        <div class="skills-floating-icon" style="bottom:75%; right:40%;"><img src="img/figma.svg" alt="figma"></div>
+
+        
+    </div>
+
+        <footer>
+        <p>&copy; Designed by Faris 2025</p><br
+        <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 24px; height: 24px;"></a>
+    </footer>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="close-btn" onclick="toggleMenu()">&times;</div>
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <script>
+
+
+    function toggleMenu() {
+        const overlay = document.getElementById('menuOverlay');
+        const main = document.getElementById('main-content');
+        overlay.classList.toggle('active');
+        main.style.display = main.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+    </script>
+</body>
+</html>

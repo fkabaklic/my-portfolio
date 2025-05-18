@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faris Kabaklić - Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left" onclick="goBack()">[ GO BACK ]</div>
+        <div class="nav-right">
+            <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+            <div class="menu" onclick="toggleMenu()">MENU</div>
+        </div>
+    </nav>
+
+    <div id="main-content">
+        <div class="container">
+            <div class="text-content">
+                <h1>SpoonfulMeals</h1>
+                <h2>Recipe Sharing Platform</h2>
+                <div class="tags">
+                    <div class="tag">Web</div>
+                    <div class="tag">Javascript</div>
+                    <div class="tag">Interactive</div>
+                </div>
+                <div class="about">
+                    <h3>ABOUT</h3>
+                    <p>SpoonfulMeals is an interactive recipe sharing platform that connects food enthusiasts and home cooks. Built with modern JavaScript, the platform features a dynamic user interface for browsing, sharing, and discovering recipes. Users can create accounts, save their favorite recipes, and interact with other food lovers through comments and ratings. The project emphasizes user experience with features like recipe filtering, search functionality, and a responsive design that makes recipe browsing enjoyable on any device.</p>
+                </div>
+                <a href="#" class="view-button">View Project</a>
+            </div>
+            <div class="image-container">
+                <img src="img/spoonful_homepage.png" alt="SpoonfulMeals Project Image">
+            </div>
+            <div class="image-container">
+                <img src="img/spoonful_mealplans.png" alt="SpoonfulMeals Project Image">
+            </div>
+            <div class="image-container">
+                <img src="img/spoonful_mealplan.png" alt="SpoonfulMeals Project Image">
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="close-btn" onclick="toggleMenu()">&times;</div>
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function toggleMenu() {
+            const overlay = document.getElementById('menuOverlay');
+            const main = document.getElementById('main-content');
+            overlay.classList.toggle('active');
+            main.style.display = main.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html> 

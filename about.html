@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Faris Kabaklić</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">FK</a>
+        <div class="nav-right">
+            <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+            <div class="menu" onclick="toggleMenu()">MENU</div>
+        </div>
+    </nav>
+    <main class="about-grid">
+        <section class="about-left">
+            <div>
+                <h1 class="about-name">Faris Kabaklić,</h1>
+                <div class="about-title">Digital Designer & Developer</div>
+            </div>
+            <hr>
+            <div class="about-summary">
+                A passionate creative with 10+ years of experience, I excel in leading complex design and web projects from concept to completion.
+            </div>
+            <hr>
+            <div class="about-contact">
+                <a href="mailto:hello@email.com">faris.kabaklic@gmail.com ↗</a>
+                <a href="tel:5551234567">(312) 218-5212 ↗</a>
+                <a href="https://www.linkedin.com/in/hirefaris" target="_blank">LinkedIn ↗</a>
+            </div>
+        </section>
+        <section class="about-right">
+            <div class="about-exp-label">Experience</div>
+            <div class="about-experience">
+                <div class="exp-block">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Senior Graphic Designer</div>
+                            <div class="exp-company"><a href="#">@properties ↗</a></div>
+                            <div class="exp-date">2023 – Present · Chicago, IL</div>
+                        </div>
+                        <ul>
+                            <li>Lead designer for corporate brand identity, client campaigns, and real estate marketing assets across print and digital platforms.</li>
+                            <li>Collaborated with marketing and development teams to support business growth and brand integrity.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="exp-block">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Visual Designer</div>
+                            <div class="exp-company"><a href="#">iCanvas ↗</a></div>
+                            <div class="exp-date">2013 – 2023 · Chicago, IL</div>
+                        </div>
+                        <ul>
+                            <li>Developed responsive websites and web applications for various clients, focusing on user experience and performance optimization.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="exp-block">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Junior Developer</div>
+                            <div class="exp-company"><a href="#">Startup Studio ↗</a></div>
+                            <div class="exp-date">2020 – 2021 · Remote</div>
+                        </div>
+                        <ul>
+                            <li>Worked on front-end development projects, implementing designs and ensuring cross-browser compatibility.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="close-btn" onclick="toggleMenu()">&times;</div>
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <script>
+    function toggleMenu() {
+        const overlay = document.getElementById('menuOverlay');
+        const main = document.getElementById('main-content');
+        overlay.classList.toggle('active');
+        main.style.display = main.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+    </script>
+</body>
+</html> 
