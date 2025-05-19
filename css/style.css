@@ -322,7 +322,6 @@ body.dark-mode {
 /* Project Detail Page */
 .container {
     margin: 0 auto;
-    padding: 0 2rem;
     display: grid;
     gap: 4rem;
 }
