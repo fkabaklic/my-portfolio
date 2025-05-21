@@ -31,3 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Change text every 3 seconds
   setInterval(cycleText, 3000);
 });
+
+function goBack() {
+  window.history.back();
+}

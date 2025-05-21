@@ -38,6 +38,7 @@ nav {
     padding: 0.75rem 1.5rem;
     transition: background 0.3s;
     border-radius: 50px;
+    border: 1px solid #c1c1c153;
 }
 
 .nav-right {
@@ -144,10 +145,7 @@ nav {
     left: 1rem;
     font-size: 1.7rem;
     font-weight: 100;
-    /* letter-spacing: 2px; */
-    /* text-transform: uppercase; */
     color: white;
-    /* background: rgba(0, 0, 0, 0.4); */
     padding: 0.4rem 0.8rem;
     border-radius: 4px;
 }
@@ -324,7 +322,7 @@ body.dark-mode {
 
 /* Project Detail Page */
 .container {
-    margin: 0 auto;
+    margin-top: 3rem;
     display: grid;
     gap: 4rem;
 }
@@ -533,7 +531,7 @@ body.dark-mode .card:hover {
 }
 
 body.dark-mode .tag {
-    background: var(--primary-color);
+    background: rgba(40, 40, 40, 0.341);
     color: #ffffff;
 }
 
@@ -1289,6 +1287,7 @@ html {
     align-items: center;
     width: 36px;
     cursor: pointer;
+    display: none;
    
 }
 .hamburger span {

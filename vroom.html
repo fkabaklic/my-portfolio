@@ -9,10 +9,19 @@
 </head>
 <body>
     <nav>
-        <div class="nav-left" onclick="goBack()">[ GO BACK ]</div>
+        <div class="nav-left">
+            <a href="index.html" class="logo">FK</a>
+        </div>
         <div class="nav-right">
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <a href="index.html#toolbox" class="nav-link">Toolbox</a>
+            <a href="about.html" class="nav-link">About</a>
             <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-            <div class="menu" onclick="toggleMenu()">MENU</div>
+            <div class="hamburger" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -40,26 +49,10 @@
 
     <div class="menu-overlay" id="menuOverlay">
         <div class="close-btn" onclick="toggleMenu()">&times;</div>
-        <a href="index.html">Work</a>
+        <a href="index.html">Projects</a>
         <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
     </div>
 
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-        }
-
-        function toggleMenu() {
-            const overlay = document.getElementById('menuOverlay');
-            const main = document.getElementById('main-content');
-            overlay.classList.toggle('active');
-            main.style.display = main.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
+    <script src="js/scripts.js"></script>
 </body>
 </html> 
