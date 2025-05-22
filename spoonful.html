@@ -13,15 +13,19 @@
             <a href="index.html" class="logo">FK</a>
         </div>
         <div class="nav-right">
-            <a href="index.html#projects" class="nav-link">Projects</a>
+            <a href="index.html#projects" class="nav-link">Work</a>
             <a href="index.html#toolbox" class="nav-link">Toolbox</a>
             <a href="about.html" class="nav-link">About</a>
             <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-            <div class="hamburger" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
+            <div class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+        </div>
+        <div class="menu-overlay" id="menuOverlay">
+            <a href="index.html">Work</a>
+            <a href="about.html">About</a>
         </div>
     </nav>
 
@@ -53,11 +57,6 @@
         </div>
     </div>
 
-    <div class="menu-overlay" id="menuOverlay">
-        <div class="close-btn" onclick="toggleMenu()">&times;</div>
-        <a href="index.html">Projects</a>
-        <a href="about.html">About</a>
-    </div>
 
     <script src="js/scripts.js"></script>
 </body>

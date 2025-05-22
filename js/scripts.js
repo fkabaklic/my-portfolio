@@ -1,8 +1,12 @@
 function toggleMenu() {
   const overlay = document.getElementById('menuOverlay');
   const main = document.getElementById('main-content');
+  const hamburger = document.getElementById('hamburgerBtn');
   overlay.classList.toggle('active');
   main.style.display = main.style.display === 'none' ? 'block' : 'none';
+  if (hamburger) {
+    hamburger.classList.toggle('open');
+  }
 }
 
 function toggleDarkMode() {
