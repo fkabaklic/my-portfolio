@@ -11,15 +11,25 @@ function toggleMenu() {
 
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
+  // Save preference
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('darkMode', 'enabled');
+  } else {
+    localStorage.setItem('darkMode', 'disabled');
+  }
 }
 
-// Text cycling functionality
+// On page load, apply dark mode if previously enabled
 document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+  }
+
   const texts = document.querySelectorAll('.cycling-text');
   let currentIndex = 0;
 
   // Set initial active text
-  texts[0].classList.add('active');
+  if (texts.length > 0) texts[0].classList.add('active');
 
   function cycleText() {
       // Remove active class from current text
