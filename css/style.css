@@ -17,6 +17,38 @@ body {
     padding-top: 80px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Dot Grid Background for top half of page */
+body {
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(to bottom, transparent 0%, transparent 10%, rgba(255, 255, 255, 1) 50%),
+        radial-gradient(circle, var(--primary-color) 2px, transparent 1px);
+    background-size: 100% 100%, 30px 30px;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+body.dark-mode::before {
+    background-image: 
+        linear-gradient(to bottom, transparent 0%, transparent 10%, rgba(255, 255, 255, 1) 30%),
+        radial-gradient(circle, var(--secondary-color) 2px, transparent 1px);
+    opacity: 0.12;
+}
+
+
 /* Nav */
 nav {
     position: fixed;
@@ -35,7 +67,7 @@ nav {
     margin-bottom: 2rem;
     animation: fadeIn 1s ease-out;
     box-shadow: 0 1px 8px rgba(0,0,0,0.03);
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2.2rem;
     transition: background 0.3s;
     border-radius: 50px;
     border: 1px solid #c1c1c153;
@@ -1384,4 +1416,15 @@ body.dark-mode .hamburger:hover span {
     .hamburger span {
         margin: 3px 0;
     }
+}
+
+.headline-word {
+    opacity: 0;
+    transform: translateY(40px);
+    display: inline-block;
+    transition: opacity 1s cubic-bezier(.77,0,.18,1), transform 0.6s cubic-bezier(.77,0,.18,1);
+}
+.headline-word.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

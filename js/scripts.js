@@ -25,6 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('dark-mode');
   }
 
+  // Stagger headline animation
+  const words = document.querySelectorAll('.headline-word');
+  words.forEach((word, i) => {
+    setTimeout(() => {
+      word.classList.add('visible');
+    }, i * 200);
+  });
+
   const texts = document.querySelectorAll('.cycling-text');
   let currentIndex = 0;
 
