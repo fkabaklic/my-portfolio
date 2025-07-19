@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vroom | Faris Kabaklic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.svg">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5DGVQ6FV3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-X5DGVQ6FV3');
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <a href="index.html"><img src="img/fk.svg" alt="Faris Kabaklić Logo"></a>
+        </div>
+        <div class="nav-right">
+            <a href="index.html#projects" class="nav-link">Work</a>
+            <a href="index.html#toolbox" class="nav-link">Toolbox</a>
+            <a href="about.html" class="nav-link">About</a>
+            <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+            <div class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="menu-overlay" id="menuOverlay">
+            <a href="index.html">Work</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <div id="main-content">
+        <div class="container">
+            <div class="text-content">
+                <h1>Fit AI</h1>
+                <h2>AI Fitness Trainer</h2>
+                <div class="tags">
+                    <div class="tag">Mobile</div>
+                    <div class="tag">Branding</div>
+                </div>
+                <div class="about">
+                    <h3>ABOUT</h3>
+                    <p>This personal project is driven by my passion for fitness. As a committed gym enthusiast, I frequently notice new users having difficulty identifying the correct exercises or equipment. This inspired the idea for Fit AI: an AI-based personal trainer that devises tailored workouts for particular muscle groups and fitness levels. The app will also feature a scan tool, allowing users to photograph gym equipment and get exercise recommendations based on the images.</p>
+                </div>
+                <a href="" target="_blank" class="view-button">Coming Soon</a>
+            </div>
+            <div class="image-container">
+                <img src="/img/fit_ai/Logo.png" alt="Vroom Project Image">
+            </div>
+            <div class="image-container">
+                <img src="/img/fit_ai/Color Palette.png" alt="Vroom Project Image">
+            </div>
+            <div class="image-container">
+                <img src="/img/fit_ai/Mockup_Isometric.png" alt="Vroom Project Image">
+            </div>
+            <div class="image-container">
+                <img src="/img/fit_ai/Mockup_All.png" alt="Vroom Project Image">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/scripts.js"></script>
+</body>
+</html> 
