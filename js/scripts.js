@@ -57,3 +57,28 @@ document.addEventListener('DOMContentLoaded', function() {
 function goBack() {
   window.history.back();
 }
+
+// Custom event tracking for project views
+function trackProjectView(projectName) {
+  // Google Analytics event tracking
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'project_view', {
+      'project_name': projectName,
+      'event_category': 'engagement',
+      'event_label': 'project_link_click'
+    });
+  }
+  
+  // Custom event for internal tracking
+  const event = new CustomEvent('projectView', {
+    detail: {
+      project: projectName,
+      timestamp: new Date().toISOString(),
+      url: window.location.href
+    }
+  });
+  document.dispatchEvent(event);
+  
+  // Console log for development
+  console.log(`Project view tracked: ${projectName}`);
+}
