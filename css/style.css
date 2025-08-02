@@ -464,9 +464,17 @@ body.dark-mode {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.view-button {
-    display: inline-block;
+.button-group {
+    display: flex;
+    gap: 0.75rem;
     margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.view-button, .github-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
     border: 1px solid currentColor;
@@ -476,9 +484,18 @@ body.dark-mode {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.view-button:hover {
+.view-button:hover, .github-button:hover {
     background-color: black;
     color: #fff;
+}
+
+.github-button img {
+    transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.github-button:hover img {
+    transform: scale(1.1);
+    filter: brightness(0) invert(1);
 }
 
 
@@ -641,12 +658,12 @@ body.dark-mode .submit-btn:hover {
     border-color: rgba(255, 255, 255, 0.4);
 }
 
-body.dark-mode .view-button {
+body.dark-mode .view-button, body.dark-mode .github-button {
     border-color: rgba(255, 255, 255, 0.2);
     color: #ffffff;
 }
 
-body.dark-mode .view-button:hover {
+body.dark-mode .view-button:hover, body.dark-mode .github-button:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.4);
 }
