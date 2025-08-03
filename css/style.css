@@ -591,6 +591,9 @@ body.dark-mode {
     .nav-link {
         visibility: hidden;
     }
+    .memoji{
+        width: 55px;
+    }
 }
 
 /* Dark Mode Styles */
