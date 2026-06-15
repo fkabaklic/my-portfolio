@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpoonfulMeals — an interactive recipe sharing and meal planning platform by Faris Kabaklic.">
     <title>SpoonfulMeals | Faris Kabaklic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/favicon.svg">
-    <!-- Google tag (gtag.js) -->
+    <link rel="icon" href="img/favicon.png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5DGVQ6FV3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-X5DGVQ6FV3');
     </script>
 </head>
@@ -23,21 +24,24 @@
             <a href="index.html"><img src="img/memoji.png" class="memoji" alt="Faris Memoji"></a>
         </div>
         <div class="nav-right">
-            <a href="index.html#projects" class="nav-link">Work</a>
-            <a href="index.html#toolbox" class="nav-link">Tool Stack</a>
+            <a href="index.html#projects" class="nav-link is-active">Work</a>
             <a href="about.html" class="nav-link">About</a>
-            <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-            <div class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <button class="dark-toggle" type="button">Dark Mode</button>
+            <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-        </div>
-        <div class="menu-overlay" id="menuOverlay">
-            <a href="index.html">Work</a>
-            <a href="about.html">About</a>
+            </button>
         </div>
     </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <a href="index.html#projects">Work</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+        <button class="dark-toggle menu-dark-toggle" type="button">Dark Mode</button>
+    </div>
 
     <div id="main-content">
         <div class="container">
@@ -53,21 +57,19 @@
                     <p>SpoonfulMeals is an interactive meal planning platform. Built with modern JavaScript, it features a dynamic user interface for browsing and discovering recipes. The project focuses on enhancing user experience with features like search functionality and a responsive design that makes browsing recipes enjoyable on any device.</p>
                 </div>
                 <div class="button-group">
-                    <a href="https://spoonfulmeals-941606.netlify.app/" target="_blank" class="view-button" onclick="trackProjectView('SpoonfulMeals')">View Project</a>
-                    <a href="https://github.com/fkabaklic/spoonfulmeals" target="_blank" class="github-button">
+                    <a href="https://spoonfulmeals-941606.netlify.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="SpoonfulMeals">View Project</a>
+                    <a href="https://github.com/fkabaklic/spoonfulmeals" target="_blank" rel="noopener noreferrer" class="github-button">
                         <img src="img/github.svg" alt="GitHub" width="16" height="16">
                         GitHub
                     </a>
                 </div>
-                
             </div>
             <div class="image-container">
-                <img src="img/spoonful_homepage.png" alt="SpoonfulMeals Project Image">
+                <img src="img/spoonful_homepage.png" alt="SpoonfulMeals homepage screenshot" loading="lazy">
             </div>
         </div>
     </div>
 
-
     <script src="js/scripts.js"></script>
 </body>
-</html> 
+</html>

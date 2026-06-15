@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vroom — a full-stack car rental platform built with Node.js by Faris Kabaklic.">
     <title>Vroom | Faris Kabaklic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/favicon.svg">
-    <!-- Google tag (gtag.js) -->
+    <link rel="icon" href="img/favicon.png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5DGVQ6FV3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-X5DGVQ6FV3');
     </script>
 </head>
@@ -23,21 +24,24 @@
             <a href="index.html"><img src="img/memoji.png" class="memoji" alt="Faris Memoji"></a>
         </div>
         <div class="nav-right">
-            <a href="index.html#projects" class="nav-link">Work</a>
-            <a href="index.html#toolbox" class="nav-link">Tool Stack</a>
+            <a href="index.html#projects" class="nav-link is-active">Work</a>
             <a href="about.html" class="nav-link">About</a>
-            <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-            <div class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <button class="dark-toggle" type="button">Dark Mode</button>
+            <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-        </div>
-        <div class="menu-overlay" id="menuOverlay">
-            <a href="index.html">Work</a>
-            <a href="about.html">About</a>
+            </button>
         </div>
     </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <a href="index.html#projects">Work</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+        <button class="dark-toggle menu-dark-toggle" type="button">Dark Mode</button>
+    </div>
 
     <div id="main-content">
         <div class="container">
@@ -50,23 +54,22 @@
                 </div>
                 <div class="about">
                     <h3>ABOUT</h3>
-                    <p>Vroom is a full-stack car rental platform built with Node.js and modern web technologies. The project features a robust backend system for managing vehicle inventory, user authentication, and booking management. The frontend delivers a seamless user experience search and responsive design that works across all devices.</p>
+                    <p>Vroom is a full-stack car rental platform built with Node.js and modern web technologies. The project features a robust backend system for managing vehicle inventory, user authentication, and booking management. The frontend delivers a seamless user experience with search and responsive design that works across all devices.</p>
                 </div>
                 <div class="button-group">
-                    <a href="https://vroom-fkabaklics-projects.vercel.app/" target="_blank" class="view-button" onclick="trackProjectView('Vroom')">View Project</a>
-                    <a href="https://github.com/fkabaklic/vroom" target="_blank" class="github-button">
+                    <a href="https://vroom-fkabaklics-projects.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="Vroom">View Project</a>
+                    <a href="https://github.com/fkabaklic/vroom" target="_blank" rel="noopener noreferrer" class="github-button">
                         <img src="img/github.svg" alt="GitHub" width="16" height="16">
                         GitHub
                     </a>
                 </div>
             </div>
             <div class="image-container">
-                <img src="img/vroom_homepage.png" alt="Vroom Project Image">
+                <img src="img/vroom_homepage.png" alt="Vroom homepage screenshot" loading="lazy">
             </div>
         </div>
     </div>
 
-
     <script src="js/scripts.js"></script>
 </body>
-</html> 
+</html>

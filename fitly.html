@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fitly — an AI fitness trainer mobile app concept with branding by Faris Kabaklic.">
     <title>Fitly | Faris Kabaklic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/favicon.svg">
-    <!-- Google tag (gtag.js) -->
+    <link rel="icon" href="img/favicon.png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5DGVQ6FV3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-X5DGVQ6FV3');
     </script>
 </head>
@@ -23,21 +24,24 @@
             <a href="index.html"><img src="img/memoji.png" class="memoji" alt="Faris Memoji"></a>
         </div>
         <div class="nav-right">
-            <a href="index.html#projects" class="nav-link">Work</a>
-            <a href="index.html#toolbox" class="nav-link">Tool Stack</a>
+            <a href="index.html#projects" class="nav-link is-active">Work</a>
             <a href="about.html" class="nav-link">About</a>
-            <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-            <div class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <button class="dark-toggle" type="button">Dark Mode</button>
+            <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-        </div>
-        <div class="menu-overlay" id="menuOverlay">
-            <a href="index.html">Work</a>
-            <a href="about.html">About</a>
+            </button>
         </div>
     </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <a href="index.html#projects">Work</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+        <button class="dark-toggle menu-dark-toggle" type="button">Dark Mode</button>
+    </div>
 
     <div id="main-content">
         <div class="container">
@@ -50,21 +54,19 @@
                 </div>
                 <div class="about">
                     <h3>ABOUT</h3>
-                    <p>This personal project is driven by my passion for fitness. As a gym enthusiast, I frequently notice new users having difficulty identifying the correct exercises or equipment. This inspired the idea for Fitly: an AI-based personal trainer that generates  workouts for particular muscle groups and fitness difficulty. The app will also feature a scan tool, allowing users to scan gym equipment and get exercise recommendations.</p>
+                    <p>This personal project is driven by my passion for fitness. As a gym enthusiast, I frequently notice new users having difficulty identifying the correct exercises or equipment. This inspired the idea for Fitly: an AI-based personal trainer that generates workouts for particular muscle groups and fitness difficulty. The app will also feature a scan tool, allowing users to scan gym equipment and get exercise recommendations.</p>
                 </div>
-                <a href="" target="_blank" class="view-button">Coming Soon</a>
+                <span class="view-button view-button--disabled">Coming Soon</span>
             </div>
             <div class="image-container">
-                <img src="/img/fitly/fitly_branding.png" alt="fitly Project Image">
+                <img src="img/fitly/fitly_branding.png" alt="Fitly branding" loading="lazy">
             </div>
-            
             <div class="image-container">
-                <img src="/img/fitly/fitly_screens_all.png" alt="fitly Project Image">
+                <img src="img/fitly/fitly_screens_all.png" alt="Fitly app screens" loading="lazy">
             </div>
         </div>
     </div>
 
-
     <script src="js/scripts.js"></script>
 </body>
-</html> 
+</html>

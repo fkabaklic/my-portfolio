@@ -1,84 +1,106 @@
 function toggleMenu() {
   const overlay = document.getElementById('menuOverlay');
-  const main = document.getElementById('main-content');
   const hamburger = document.getElementById('hamburgerBtn');
-  overlay.classList.toggle('active');
-  main.style.display = main.style.display === 'none' ? 'block' : 'none';
+  const isOpen = overlay.classList.toggle('active');
+  document.body.classList.toggle('menu-open', isOpen);
   if (hamburger) {
-    hamburger.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
   }
+}
+
+function updateDarkModeToggleLabels() {
+  const isDark = document.body.classList.contains('dark-mode');
+  const label = isDark ? 'Light Mode' : 'Dark Mode';
+  document.querySelectorAll('.dark-toggle').forEach((btn) => {
+    btn.textContent = label;
+  });
 }
 
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
-  // Save preference
-  if (document.body.classList.contains('dark-mode')) {
-    localStorage.setItem('darkMode', 'enabled');
-  } else {
-    localStorage.setItem('darkMode', 'disabled');
+  const isDark = document.body.classList.contains('dark-mode');
+  localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+  updateDarkModeToggleLabels();
+}
+
+function applyDarkModePreference() {
+  const stored = localStorage.getItem('darkMode');
+  if (stored === 'enabled') {
+    document.body.classList.add('dark-mode');
+  } else if (stored === 'disabled') {
+    document.body.classList.remove('dark-mode');
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark-mode');
   }
 }
 
-// On page load, apply dark mode if previously enabled
-document.addEventListener('DOMContentLoaded', function() {
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    document.body.classList.add('dark-mode');
+function trackProjectView(projectName) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'project_view', {
+      project_name: projectName,
+      event_category: 'engagement',
+      event_label: 'project_link_click',
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  applyDarkModePreference();
+  updateDarkModeToggleLabels();
+
+  document.querySelectorAll('.dark-toggle').forEach((btn) => {
+    btn.addEventListener('click', toggleDarkMode);
+  });
+
+  const hamburger = document.getElementById('hamburgerBtn');
+  if (hamburger) {
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
   }
 
-  // Stagger headline animation
+  document.querySelectorAll('.menu-overlay a').forEach((link) => {
+    link.addEventListener('click', () => {
+      const overlay = document.getElementById('menuOverlay');
+      if (overlay && overlay.classList.contains('active')) {
+        toggleMenu();
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const overlay = document.getElementById('menuOverlay');
+      if (overlay && overlay.classList.contains('active')) {
+        toggleMenu();
+      }
+    }
+  });
+
+  document.querySelectorAll('[data-project]').forEach((link) => {
+    link.addEventListener('click', () => trackProjectView(link.dataset.project));
+  });
+
   const words = document.querySelectorAll('.headline-word');
   words.forEach((word, i) => {
-    setTimeout(() => {
-      word.classList.add('visible');
-    }, i * 200);
+    setTimeout(() => word.classList.add('visible'), i * 200);
   });
 
   const texts = document.querySelectorAll('.cycling-text');
-  let currentIndex = 0;
+  if (texts.length > 0) {
+    let currentIndex = 0;
+    texts[0].classList.add('active');
 
-  // Set initial active text
-  if (texts.length > 0) texts[0].classList.add('active');
-
-  function cycleText() {
-      // Remove active class from current text
+    setInterval(() => {
       texts[currentIndex].classList.remove('active');
-      
-      // Move to next text
       currentIndex = (currentIndex + 1) % texts.length;
-      
-      // Add active class to new text
       texts[currentIndex].classList.add('active');
+    }, 3000);
   }
-
-  // Change text every 3 seconds
-  setInterval(cycleText, 3000);
 });
-
-function goBack() {
-  window.history.back();
-}
-
-// Custom event tracking for project views
-function trackProjectView(projectName) {
-  // Google Analytics event tracking
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'project_view', {
-      'project_name': projectName,
-      'event_category': 'engagement',
-      'event_label': 'project_link_click'
-    });
-  }
-  
-  // Custom event for internal tracking
-  const event = new CustomEvent('projectView', {
-    detail: {
-      project: projectName,
-      timestamp: new Date().toISOString(),
-      url: window.location.href
-    }
-  });
-  document.dispatchEvent(event);
-  
-  // Console log for development
-  console.log(`Project view tracked: ${projectName}`);
-}

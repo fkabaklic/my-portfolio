@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ChopShop — a responsive barber shop website concept by Faris Kabaklic.">
     <title>ChopShop | Faris Kabaklic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/favicon.svg">
-    <!-- Google tag (gtag.js) -->
+    <link rel="icon" href="img/favicon.png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5DGVQ6FV3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-X5DGVQ6FV3');
     </script>
 </head>
@@ -23,21 +24,24 @@
             <a href="index.html"><img src="img/memoji.png" class="memoji" alt="Faris Memoji"></a>
         </div>
         <div class="nav-right">
-            <a href="index.html#projects" class="nav-link">Work</a>
-            <a href="index.html#toolbox" class="nav-link">Tool Stack</a>
+            <a href="index.html#projects" class="nav-link is-active">Work</a>
             <a href="about.html" class="nav-link">About</a>
-            <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-            <div class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <button class="dark-toggle" type="button">Dark Mode</button>
+            <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-        </div>
-        <div class="menu-overlay" id="menuOverlay">
-            <a href="index.html">Work</a>
-            <a href="about.html">About</a>
+            </button>
         </div>
     </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <a href="index.html#projects">Work</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+        <button class="dark-toggle menu-dark-toggle" type="button">Dark Mode</button>
+    </div>
 
     <div id="main-content">
         <div class="container">
@@ -53,15 +57,14 @@
                     <h3>ABOUT</h3>
                     <p>ChopShop is a fictional website created specifically for my school project, designed to showcase a fast casual salad bar concept. The website features a modern and appealing responsive design, ensuring optimal functionality and aesthetic across a wide range of devices, including smartphones, tablets, and desktops. The clean design emphasizes fresh, vibrant visuals that reflect the healthy offerings of the salad bar, providing an engaging user experience.</p>
                 </div>
-                <a href="#" target="_blank" class="view-button">Coming Soon</a>
+                <span class="view-button view-button--disabled">Coming Soon</span>
             </div>
             <div class="image-container">
-                <img src="img/chopshop_full.png" alt="ChopShop Project Image">
+                <img src="img/chopshop_full.png" alt="ChopShop website screenshot" loading="lazy">
             </div>
         </div>
     </div>
 
-
     <script src="js/scripts.js"></script>
 </body>
-</html> 
+</html>

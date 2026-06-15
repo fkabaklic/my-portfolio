@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Faris Kabaklic — designer-turned-developer with 10+ years of experience in web, mobile, and brand design.">
     <title>About | Faris Kabaklic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/favicon.svg">
+    <link rel="icon" href="img/favicon.png">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5DGVQ6FV3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-X5DGVQ6FV3');
     </script>
 </head>
@@ -24,32 +26,36 @@
         </div>
         <div class="nav-right">
             <a href="index.html#projects" class="nav-link">Work</a>
-            <a href="index.html#toolbox" class="nav-link">Toolbox</a>
-            <a href="about.html" class="nav-link">About</a>
-            <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-            <div class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Open menu" tabindex="0">
+            <a href="about.html" class="nav-link is-active">About</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <button class="dark-toggle" type="button">Dark Mode</button>
+            <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-        </div>
-        <div class="menu-overlay" id="menuOverlay">
-            <a href="index.html">Work</a>
-            <a href="about.html">About</a>
+            </button>
         </div>
     </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <a href="index.html#projects">Work</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+        <button class="dark-toggle menu-dark-toggle" type="button">Dark Mode</button>
+    </div>
 
     <main class="about-grid">
         <section class="about-left">
             <div class="about-summary">
-                <h2 style="margin-bottom:0.5rem;">About Me</h2>
-                <p>Multi-faceted designer with 10+ years of experience specializing in Visual Design. Proven ability to create impactful digital assets and drive engagement and conversion rates. Adept at collaborating with cross-functional teams to deliver high-quality design solutions.
-</p>
+                <h2 class="about-heading">About Me</h2>
+                <p>
+                    Designer-turned-developer with 10+ years of professional experience across web, mobile, and brand. Currently completing a B.S. in Web Development at DePaul, I bring a rare combination of design and hands-on front-end engineering, fluent in React, Node.js, and modern CSS, with a track record of shipping real tools used by real teams. I build things that look intentional and work reliably.
+                </p>
             </div>
-            
+
             <div class="about-contact">
-                <a href="mailto:faris.kabaklic@gmail.com" title="Email"><span style="margin-right:8px;">📧</span>faris.kabaklic@gmail.com</a>
-                <a href="https://www.linkedin.com/in/hirefaris" target="_blank" title="LinkedIn"><span style="margin-right:8px;">🔗</span>LinkedIn</a>
+                <a href="mailto:faris.kabaklic@gmail.com" title="Email"><span class="contact-emoji">📧</span>faris.kabaklic@gmail.com</a>
+                <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer" title="LinkedIn"><span class="contact-emoji">🔗</span>LinkedIn</a>
             </div>
         </section>
         <section class="about-right">
@@ -59,15 +65,14 @@
                     <div class="header">
                         <div>
                             <div class="title">Senior Graphic Designer</div>
-                            <div class="company"><a href="#">@properties Christie's International Real Estate</a></div>
+                            <div class="company">@properties Christie's International Real Estate</div>
                             <div class="date">2023 – Present · Chicago, IL</div>
                         </div>
                         <ul>
-                            <li>Lead the design and execution of corporate branding strategies, enhancing brand consistency across campaigns and internal communications..</li>
+                            <li>Lead the design and execution of corporate branding strategies, enhancing brand consistency across campaigns and internal communications.</li>
                             <li>Collaborate with marketing teams to create innovative visual assets that strengthen brand identity.</li>
                             <li>Oversee the development of print and digital marketing materials, ensuring alignment with organizational goals and industry trends.</li>
                             <li>Driven by creativity and strategic thinking, focused on shaping the visual landscape at @CIRE and beyond, ensuring projects meet and exceed expectations.</li>
-
                         </ul>
                     </div>
                 </div>
@@ -75,7 +80,7 @@
                     <div class="header">
                         <div>
                             <div class="title">Visual Designer</div>
-                            <div class="company"><a href="#">iCanvas</a></div>
+                            <div class="company">iCanvas</div>
                             <div class="date">2013 – 2023 · Chicago, IL</div>
                         </div>
                         <ul>
@@ -92,7 +97,7 @@
                     <div class="header">
                         <div>
                             <div class="title">DePaul University</div>
-                            <div class="company"><a href="#">Information Technology | Web Development Concentration</a></div>
+                            <div class="company">Information Technology | Web Development Concentration</div>
                             <div class="date">Currently Completing Bachelor's Degree</div>
                             <ul>
                                 <li>Notable courses: Web Development I, Interactive Web Scripting, Applied OO Programming, and more.</li>
@@ -105,15 +110,15 @@
     </main>
 
     <footer>
-        <p style="margin-bottom: 1rem;">&copy; Designed by Faris 2025</p>
+        <p class="footer-copy">&copy; Designed by Faris 2026</p>
         <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 24px; height: 24px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="footer-icon">
         </a>
-        <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width: 24px; height: 24px;">
+        <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer">
+            <img src="img/github.svg" alt="GitHub" class="footer-icon">
         </a>
     </footer>
 
     <script src="js/scripts.js"></script>
 </body>
-</html> 
+</html>
