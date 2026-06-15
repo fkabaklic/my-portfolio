@@ -36,6 +36,57 @@ function applyDarkModePreference() {
   }
 }
 
+function initSectionReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  const sections = document.querySelectorAll(
+    '#main-content > section:not(.hero), #main-content > footer, main.about-grid > section, body > footer, .container'
+  );
+
+  if (sections.length === 0) {
+    return;
+  }
+
+  sections.forEach((section) => section.classList.add('section-reveal'));
+
+  const reveal = (target, observer) => {
+    target.classList.add('is-visible');
+    observer.unobserve(target);
+  };
+
+  const sectionObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          reveal(entry.target, observer);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  const footerObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          reveal(entry.target, observer);
+        }
+      });
+    },
+    { threshold: 0, rootMargin: '0px 0px 120px 0px' }
+  );
+
+  sections.forEach((section) => {
+    if (section.tagName === 'FOOTER') {
+      footerObserver.observe(section);
+    } else {
+      sectionObserver.observe(section);
+    }
+  });
+}
+
 function trackProjectView(projectName) {
   if (typeof gtag !== 'undefined') {
     gtag('event', 'project_view', {
@@ -49,6 +100,7 @@ function trackProjectView(projectName) {
 document.addEventListener('DOMContentLoaded', function () {
   applyDarkModePreference();
   updateDarkModeToggleLabels();
+  initSectionReveal();
 
   document.querySelectorAll('.dark-toggle').forEach((btn) => {
     btn.addEventListener('click', toggleDarkMode);
