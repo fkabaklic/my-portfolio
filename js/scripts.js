@@ -87,6 +87,35 @@ function initSectionReveal() {
   });
 }
 
+function initToolboxMarquee() {
+  const track = document.querySelector('.toolbox-marquee-track');
+  if (!track || track.dataset.marqueeReady === 'true') return;
+
+  const firstGroup = track.querySelector('.toolbox-marquee-group');
+  if (!firstGroup) return;
+
+  const updateDistance = () => {
+    const distance = firstGroup.getBoundingClientRect().width;
+    if (distance > 0) {
+      track.style.setProperty('--marquee-distance', `${distance}px`);
+    }
+  };
+
+  updateDistance();
+  window.addEventListener('resize', updateDistance);
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(updateDistance);
+  }
+
+  if (typeof ResizeObserver !== 'undefined') {
+    const observer = new ResizeObserver(updateDistance);
+    observer.observe(firstGroup);
+  }
+
+  track.dataset.marqueeReady = 'true';
+}
+
 function trackProjectView(projectName) {
   if (typeof gtag !== 'undefined') {
     gtag('event', 'project_view', {
@@ -101,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
   applyDarkModePreference();
   updateDarkModeToggleLabels();
   initSectionReveal();
+  initToolboxMarquee();
 
   document.querySelectorAll('.dark-toggle').forEach((btn) => {
     btn.addEventListener('click', toggleDarkMode);
