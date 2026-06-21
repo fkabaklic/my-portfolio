@@ -741,7 +741,7 @@ body.menu-open nav {
 .work-section {
     max-width: 1200px;
     margin: 0 auto 5rem;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 
 .work-section .projects {
@@ -1496,7 +1496,7 @@ body.dark-mode .block {
     .about-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
-        padding: 1rem 0 0;
+        padding: 1.5rem;
     }
 
     .about-left {
