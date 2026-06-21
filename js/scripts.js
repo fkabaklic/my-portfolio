@@ -16,6 +16,14 @@ function updateDarkModeToggleLabels() {
   document.querySelectorAll('.dark-toggle').forEach((btn) => {
     btn.textContent = label;
   });
+  updateGithubButtonIcons();
+}
+
+function updateGithubButtonIcons() {
+  const isDark = document.body.classList.contains('dark-mode');
+  document.querySelectorAll('.github-button img').forEach((img) => {
+    img.src = isDark ? 'img/github-light.svg' : 'img/github.svg';
+  });
 }
 
 function toggleDarkMode() {
@@ -98,6 +106,10 @@ function initToolboxMarquee() {
   const DURATION = 45;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  let cachedDistance = 0;
+  let cachedViewportWidth = 0;
+  let resizeTimer;
+
   const cloneGroup = () => {
     const clone = template.cloneNode(true);
     clone.setAttribute('aria-hidden', 'true');
@@ -109,10 +121,10 @@ function initToolboxMarquee() {
     return clone;
   };
 
-  const resetGroups = () => {
-    track.querySelectorAll('.toolbox-marquee-group:not(:first-child)').forEach((group) => {
-      group.remove();
-    });
+  const measure = () => {
+    const firstGroup = track.querySelector('.toolbox-marquee-group');
+    if (!firstGroup) return 0;
+    return Math.round(firstGroup.getBoundingClientRect().width);
   };
 
   const ensureGroups = () => {
@@ -127,14 +139,18 @@ function initToolboxMarquee() {
     }
   };
 
-  const applyAnimation = () => {
-    if (prefersReducedMotion) return;
+  const rebuildGroups = () => {
+    track.querySelectorAll('.toolbox-marquee-group:not(:first-child)').forEach((group) => {
+      group.remove();
+    });
+    ensureGroups();
+  };
 
-    const firstGroup = track.querySelector('.toolbox-marquee-group');
-    if (!firstGroup) return;
+  const applyAnimation = (distance) => {
+    if (prefersReducedMotion || distance <= 0) return;
+    if (distance === cachedDistance && track.dataset.marqueeAnimating === 'true') return;
 
-    const distance = Math.round(firstGroup.getBoundingClientRect().width);
-    if (distance <= 0) return;
+    cachedDistance = distance;
 
     let styleEl = document.getElementById(MARQUEE_STYLE_ID);
     if (!styleEl) {
@@ -153,31 +169,60 @@ function initToolboxMarquee() {
     track.style.animation = 'none';
     void track.offsetWidth;
     track.style.animation = `toolbox-marquee-scroll ${DURATION}s linear infinite`;
+    track.dataset.marqueeAnimating = 'true';
   };
 
-  const sync = () => {
-    resetGroups();
-    ensureGroups();
-    applyAnimation();
+  const sync = ({ rebuild = false } = {}) => {
+    const viewportWidth = window.innerWidth;
+
+    if (rebuild || viewportWidth !== cachedViewportWidth) {
+      rebuildGroups();
+      cachedViewportWidth = viewportWidth;
+    }
+
+    applyAnimation(measure());
   };
 
-  sync();
+  const debouncedResize = () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const viewportWidth = window.innerWidth;
 
-  window.addEventListener('resize', sync);
+      if (viewportWidth !== cachedViewportWidth) {
+        sync({ rebuild: true });
+        return;
+      }
+
+      const distance = measure();
+      if (distance !== cachedDistance) {
+        applyAnimation(distance);
+      }
+    }, 200);
+  };
+
+  sync({ rebuild: true });
+
+  window.addEventListener('resize', debouncedResize, { passive: true });
 
   if (document.fonts?.ready) {
-    document.fonts.ready.then(sync);
+    document.fonts.ready.then(() => {
+      const distance = measure();
+      if (distance !== cachedDistance) {
+        applyAnimation(distance);
+      }
+    });
   }
 
   track.querySelectorAll('img').forEach((img) => {
     if (!img.complete) {
-      img.addEventListener('load', sync, { once: true });
+      img.addEventListener('load', () => {
+        const distance = measure();
+        if (distance !== cachedDistance) {
+          applyAnimation(distance);
+        }
+      }, { once: true });
     }
   });
-
-  if (typeof ResizeObserver !== 'undefined') {
-    new ResizeObserver(sync).observe(template);
-  }
 
   track.dataset.marqueeReady = 'true';
 }
