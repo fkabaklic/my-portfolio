@@ -200,12 +200,12 @@ body.menu-open {
 
 @keyframes marquee {
     from { transform: translate3d(0, 0, 0); }
-    to { transform: translate3d(calc(-1 * var(--marquee-distance, 50%)), 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .toolbox-marquee-track {
-        animation: none;
+        animation: none !important;
     }
 
     .section-reveal,
@@ -579,7 +579,7 @@ body.menu-open nav {
     flex: 1;
     min-width: 0;
     min-height: 0;
-    padding: 1.5rem 2rem 1.5rem clamp(1rem, 3vw, 2rem);
+    padding: 1.5rem 2rem 1.5rem;
 }
 
 .contact-cta {
@@ -692,7 +692,7 @@ body.menu-open nav {
     box-shadow: var(--pill-shadow);
     border-radius: var(--radius-pill);
     padding: 0.5rem 2rem;
-    width: min(280px, 90vw);
+    width: min(200px, 90vw);
     height: 2.75rem;
     margin-top: 1rem;
     display: flex;
@@ -878,7 +878,6 @@ body.menu-open nav {
     display: flex;
     width: max-content;
     flex-wrap: nowrap;
-    animation: marquee 45s linear infinite;
     will-change: transform;
 }
 
@@ -1506,13 +1505,13 @@ body.dark-mode .block {
 
 @media (max-width: 768px) {
     :root {
-        --nav-offset: 96px;
+        --nav-offset: 60px;
     }
 
-    /* body {
-        padding: 1.25rem;
+    body {
+        padding: 0;
         padding-top: var(--nav-offset);
-    } */
+    }
 
     nav {
         top: 12px;
@@ -1583,11 +1582,18 @@ body.dark-mode .block {
 
     .hero-main,
     .contact-cta-main {
-        flex-direction: column-reverse;
         align-items: center;
         width: 100%;
         flex: 1 1 auto;
         min-height: 0;
+    }
+
+    .hero-main {
+        flex-direction: column-reverse;
+    }
+
+    .contact-cta-main {
+        flex-direction: column;
     }
 
     .hero-wave,
@@ -1602,7 +1608,7 @@ body.dark-mode .block {
     .hero-content,
     .contact-cta-content {
         align-items: center;
-        padding: 1rem 1rem 0.75rem;
+
         text-align: center;
         justify-content: flex-start;
     }
@@ -1687,18 +1693,25 @@ body.dark-mode .block {
         max-width: none;
     }
 
-    .card-heading h3 {
-        font-size: 1.35rem;
+    .card-heading {
+        display: contents;
     }
 
-    .card-actions {
-        width: 100%;
-        margin-left: 0;
-        justify-content: flex-end;
+    .card-heading h3 {
+        font-size: 1.35rem;
+        order: 1;
     }
 
     .card-desc {
         max-width: none;
+        order: 2;
+    }
+
+    .card-actions {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
     }
 }
 
@@ -1735,7 +1748,7 @@ body.dark-mode .block {
 
     .hero-cta .btn,
     .contact-cta .btn {
-        width: 100%;
+        width: 60%;
     }
 
     .text-content {
