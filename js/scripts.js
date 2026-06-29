@@ -24,11 +24,6 @@ function updateDarkModeToggleLabels() {
   const isDark = isDarkTheme();
 
   document.querySelectorAll('.dark-toggle').forEach((btn) => {
-    if (btn.classList.contains('menu-dark-toggle')) {
-      btn.textContent = isDark ? 'Light Mode' : 'Dark Mode';
-      return;
-    }
-
     btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
 
     const moon = btn.querySelector('.theme-toggle__icon--moon');
