@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About Faris Kabaklic — designer-turned-developer with 10+ years of experience in web, mobile, and brand design.">
     <title>About | Faris Kabaklic</title>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.png">
     <!-- Google tag (gtag.js) -->
@@ -19,20 +20,28 @@
     </script>
 </head>
 <body>
-    <nav>
-        <div class="nav-left">
-            <a href="index.html"><img src="img/logo.svg" class="memoji" alt="Faris Kabaklic"></a>
-        </div>
-        <div class="nav-right">
-            <a href="index.html#projects" class="nav-link">Work</a>
-            <a href="about.html" class="nav-link is-active">About</a>
-            <a href="index.html#contact" class="nav-link">Contact</a>
-            <button class="dark-toggle" type="button">Dark Mode</button>
-            <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <nav class="site-nav">
+        <div class="site-nav__inner">
+            <a href="index.html" class="site-nav__brand">
+                <img src="img/logo.svg" class="site-nav__mark" alt="" width="26" height="20">
+                <span class="site-nav__name">Faris Kabaklic</span>
+            </a>
+            <div class="site-nav__actions">
+                <div class="site-nav__links">
+                    <a href="index.html#projects" class="nav-link">Work</a>
+                    <a href="about.html" class="nav-link is-active">About</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                </button>
+                <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -64,14 +73,14 @@
                     <div class="header">
                         <div>
                             <div class="title">Senior Graphic Designer</div>
-                            <div class="company">@properties Christie's International Real Estate</div>
+                            <div class="company">@properties</div>
                             <div class="date">2023 – Present · Chicago, IL</div>
                         </div>
                         <ul>
-                            <li>Lead the design and execution of corporate branding strategies, enhancing brand consistency across campaigns and internal communications.</li>
-                            <li>Collaborate with marketing teams to create innovative visual assets that strengthen brand identity.</li>
-                            <li>Oversee the development of print and digital marketing materials, ensuring alignment with organizational goals and industry trends.</li>
-                            <li>Driven by creativity and strategic thinking, focused on shaping the visual landscape at @CIRE and beyond, ensuring projects meet and exceed expectations.</li>
+                            <li>Engineered a web-based market share flyer designer app used by agents company-wide, saving approximately 3 weeks of manual design work and enabling self-service branded output.</li>
+                            <li>Rebuilt and standardized the company-wide e-campaign template system, modernizing HTML/CSS structure and improving rendering consistency across email clients for thousands of agent sends.</li>
+                            <li>Piloted Framer as a no-code/low-code web platform to replace Squarespace, evaluating component architecture, CMS capabilities, and deployment workflows for enterprise adoption.</li>
+                            <li>Collaborated with marketing and engineering teams to produce and hand off responsive digital assets, bridging the gap between design intent and technical implementation.</li>
                         </ul>
                     </div>
                 </div>
@@ -83,9 +92,23 @@
                             <div class="date">2013 – 2023 · Chicago, IL</div>
                         </div>
                         <ul>
-                            <li>Create all digital channel assets while adhering to brand standards for web, mobile, social, and email.</li>
-                            <li>Part of a team that focuses on enhancing store experience by adding a slew of new features increasing conversion 75%, year over year.</li>
-                            <li>Responsible for creating wire-frames, low and high fidelity mockups, and maintaining the highest quality when handing off deliverables to developers.</li>
+                            <li>Produced all digital channel assets across web, mobile, social, and email in strict adherence to brand standards.</li>
+                            <li>Built prototypes and handed off high-fidelity assets to the engineering team as part of a cross-functional effort introducing new UX features, contributing to a 75% year-over-year conversion increase.</li>
+                            <li>Created wireframes and low/high-fidelity mockups for new product features, maintaining quality standards through developer handoff.</li>
+                            <li>Partnered closely with engineering teams to ensure design intent was accurately implemented across all digital surfaces.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="header">
+                        <div>
+                            <div class="title">Founder &amp; Front-End Developer</div>
+                            <div class="company">8ighty8 Studio</div>
+                            <div class="date">2025 – Present</div>
+                        </div>
+                        <ul>
+                            <li>Founded and operate an independent studio delivering front-end development, web design, and brand identity for clients across multiple industries.</li>
+                            <li>Build and ship client projects using React, Tailwind CSS, and Framer, covering component architecture, Figma prototyping, design systems, and custom front-end development.</li>
                         </ul>
                     </div>
                 </div>
@@ -108,14 +131,15 @@
         </section>
     </main>
 
-    <footer>
-        <p class="footer-copy">&copy; Designed by Faris 2026</p>
-        <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="footer-icon">
-        </a>
-        <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer">
-            <img src="img/github.svg" alt="GitHub" class="footer-icon">
-        </a>
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <p class="site-footer__copy">&copy; 2026 Faris Kabaklic</p>
+            <div class="site-footer__links" aria-label="Footer">
+                <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            </div>
+        </div>
     </footer>
 
     <script src="js/scripts.js"></script>

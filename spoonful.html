@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SpoonfulMeals — an interactive recipe sharing and meal planning platform by Faris Kabaklic.">
     <title>SpoonfulMeals | Faris Kabaklic</title>
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5DGVQ6FV3"></script>
@@ -18,20 +19,28 @@
     </script>
 </head>
 <body>
-    <nav>
-        <div class="nav-left">
-            <a href="index.html"><img src="img/logo.svg" class="memoji" alt="Faris Kabaklic"></a>
-        </div>
-        <div class="nav-right">
-            <a href="index.html#projects" class="nav-link is-active">Work</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="index.html#contact" class="nav-link">Contact</a>
-            <button class="dark-toggle" type="button">Dark Mode</button>
-            <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <nav class="site-nav">
+        <div class="site-nav__inner">
+            <a href="index.html" class="site-nav__brand">
+                <img src="img/logo.svg" class="site-nav__mark" alt="" width="26" height="20">
+                <span class="site-nav__name">Faris Kabaklic</span>
+            </a>
+            <div class="site-nav__actions">
+                <div class="site-nav__links">
+                    <a href="index.html#projects" class="nav-link is-active">Work</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                </button>
+                <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -68,6 +77,18 @@
             </div>
         </div>
     </div>
+
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <p class="site-footer__copy">&copy; 2026 Faris Kabaklic</p>
+            <div class="site-footer__links" aria-label="Footer">
+                <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="js/scripts.js"></script>
 </body>

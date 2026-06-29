@@ -10,38 +10,66 @@ function toggleMenu() {
   }
 }
 
+function isDarkTheme() {
+  return document.documentElement.getAttribute('data-theme') === 'dark';
+}
+
+function applyTheme(isDark) {
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.body.classList.toggle('dark-mode', isDark);
+  updateDarkModeToggleLabels();
+}
+
 function updateDarkModeToggleLabels() {
-  const isDark = document.body.classList.contains('dark-mode');
-  const label = isDark ? 'Light Mode' : 'Dark Mode';
+  const isDark = isDarkTheme();
+
   document.querySelectorAll('.dark-toggle').forEach((btn) => {
-    btn.textContent = label;
+    if (btn.classList.contains('menu-dark-toggle')) {
+      btn.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      return;
+    }
+
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+
+    const moon = btn.querySelector('.theme-toggle__icon--moon');
+    const sun = btn.querySelector('.theme-toggle__icon--sun');
+
+    if (moon) {
+      moon.hidden = isDark;
+    }
+
+    if (sun) {
+      sun.hidden = !isDark;
+    }
   });
+
   updateGithubButtonIcons();
 }
 
 function updateGithubButtonIcons() {
-  const isDark = document.body.classList.contains('dark-mode');
   document.querySelectorAll('.github-button img').forEach((img) => {
-    img.src = isDark ? 'img/github-light.svg' : 'img/github.svg';
+    img.src = isDarkTheme() ? 'img/github-light.svg' : 'img/github.svg';
   });
 }
 
 function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-  const isDark = document.body.classList.contains('dark-mode');
-  localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-  updateDarkModeToggleLabels();
+  applyTheme(!isDarkTheme());
+  localStorage.setItem('darkMode', isDarkTheme() ? 'enabled' : 'disabled');
 }
 
 function applyDarkModePreference() {
   const stored = localStorage.getItem('darkMode');
+  let isDark = false;
+
   if (stored === 'enabled') {
-    document.body.classList.add('dark-mode');
+    isDark = true;
   } else if (stored === 'disabled') {
-    document.body.classList.remove('dark-mode');
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.body.classList.add('dark-mode');
+    isDark = false;
+  } else {
+    isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
+
+  applyTheme(isDark);
 }
 
 function initSectionReveal() {
