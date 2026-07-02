@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="8ighty8 Supply — a premium Framer component marketplace for designers, built by Faris Kabaklic.">
+    <meta name="description" content="8ighty8 Supply — a React 19 component marketplace built with Vite and React Router under Faris Kabaklic's 8ighty8 Studio brand.">
     <title>8ighty8 Supply | Faris Kabaklic</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,30 +51,57 @@
     </div>
 
     <div id="main-content">
-        <div class="container">
-            <div class="text-content">
+        <div class="container project-detail project-detail--case-study">
+            <aside class="text-content project-detail__intro">
+                <p class="project-eyebrow">Component marketplace</p>
                 <h1>8ighty8 Supply</h1>
-                <h2>Component Marketplace</h2>
+                <h2>A component marketplace, built under my own studio brand.</h2>
                 <div class="tags">
                     <div class="tag">React</div>
-                    <div class="tag">Web App</div>
+                    <div class="tag">Vite</div>
+                    <div class="tag">React Router</div>
                     <div class="tag">Product UI</div>
                 </div>
-                <div class="about">
-                    <h3>ABOUT</h3>
-                    <p>Supply is the storefront for 8ighty8.studio — a curated marketplace of premium Framer components and design assets built for designers who want production-ready interactions without writing code from scratch. The platform showcases interactive 3D carousels, masonry grids, animated backgrounds, and layout tools, each with live previews and clear pricing.</p>
-                </div>
-                
+                <p class="project-dek">A UI-component marketplace built in React 19 with Vite and React Router — hand-coded, no UI kit, no state library. Designed, built, and shipped solo under my 8ighty8 studio brand.</p>
+
                 <div class="button-group">
-                    <a href="https://8ighty8-supply-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="8ighty8 Supply">View Project</a>
+                    <a href="https://8ighty8-supply-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="8ighty8 Supply">View Site</a>
                     <a href="https://github.com/fkabaklic/8ighty8-supply" target="_blank" rel="noopener noreferrer" class="github-button">
                         <img src="img/github.svg" alt="GitHub" width="16" height="16">
                         GitHub
                     </a>
                 </div>
-            </div>
-            <div class="image-container">
-                <img src="img/8ighty8-supply-homepage.png" alt="8ighty8 Supply marketplace homepage" loading="lazy">
+            </aside>
+
+            <div class="project-detail__body">
+                <figure class="image-container project-detail__hero">
+                    <img src="img/8ighty8-supply-homepage.png" alt="8ighty8 Supply marketplace homepage" loading="lazy">
+                </figure>
+
+                <section class="case-section">
+                    <h2>The brief.</h2>
+                    <p>A digital storefront for original UI components: browse a curated catalog, preview each component live, and buy the ones you want. It was built for the Framer design/dev community — designers, indie founders, and agencies who need production-ready blocks. The app spans eight pages: a homepage with a featured component and filterable grid, a components index, detail pages, and support.</p>
+                </section>
+
+                <section class="case-section">
+                    <h2>Architecture.</h2>
+                    <p>A React 19 single-page app on Vite, with client-side routing via React Router. Component detail pages use a shared templated route rendered from product data, so adding inventory means adding data instead of duplicating pages. State is handled with React's built-in hooks — no Redux, no Zustand — because at this scale that's all it needed. No UI library: every component and style is hand-built, which is where the design background does the work.</p>
+                </section>
+
+                <section class="case-section">
+                    <h2>The interesting problems.</h2>
+                    <ul class="case-list">
+                        <li><strong>The filterable catalog</strong> — client-side filtering across the component grid with <code>useState</code> and <code>useMemo</code>, keeping the UI responsive as filters change.</li>
+                        <li><strong>Data-driven detail pages</strong> — one route, one template, many products; the sticky product panel beside a live preview video became a real responsive-layout problem I designed and coded.</li>
+                        <li><strong>Hand-built interactive components</strong> — the FAQ accordion and contact form were built from scratch with accessibility in mind rather than pulled from a library.</li>
+                        <li><strong>A designer's build</strong> — the coded result leans on preview-first product cards, tight visual hierarchy, and restrained cobalt accents instead of a generic marketplace template.</li>
+                    </ul>
+                </section>
+
+                <section class="case-section">
+                    <h2>What I'd build next.</h2>
+                    <p>I would connect a full payments flow, license/download delivery, and lightweight inventory management so the marketplace can move from polished showcase to live commerce product.</p>
+                </section>
             </div>
         </div>
     </div>

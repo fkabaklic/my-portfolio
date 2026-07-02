@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HealthSync — a responsive glucose monitor app concept by Faris Kabaklic.">
-    <title>Healthsync | Faris Kabaklic</title>
+    <meta name="description" content="HealthSync — a multi-page health-tech marketing site hand-coded with CSS Grid, Flexbox, and vanilla JavaScript by Faris Kabaklic.">
+    <title>HealthSync | Faris Kabaklic</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
@@ -51,27 +51,67 @@
     </div>
 
     <div id="main-content">
-        <div class="container">
-            <div class="text-content">
+        <div class="container project-detail project-detail--case-study">
+            <aside class="text-content project-detail__intro">
+                <p class="project-eyebrow">Health-tech marketing site · CSS layout</p>
                 <h1>HealthSync</h1>
-                <h2>Glucose Monitor App</h2>
+                <h2>A marketing site for a fictional health brand, built to show CSS layout craft.</h2>
                 <div class="tags">
-                    <div class="tag">Web App</div>
-                    <div class="tag">Product UI</div>
+                    <div class="tag">HTML</div>
+                    <div class="tag">CSS Grid</div>
+                    <div class="tag">Flexbox</div>
+                    <div class="tag">Vanilla JS</div>
                 </div>
-                <div class="about">
-                    <h3>ABOUT</h3>
-                    <p>Healthsync was my capstone project my IT 251 course that emphasized responsive design. We were required to fully develop a website utilizing only flexbox and grid layout methods. I decided to create mine for a fictional company named Healthsync, which specializes in a continuous glucose monitor (CGM) device aimed at empowering individuals with diabetes as well as health and fitness enthusiasts.</p>
+                <p class="project-dek">A multi-page product site for a fictional continuous glucose monitor — hand-coded with CSS Grid and Flexbox, no framework. A pure front-end layout piece where the design background does the work.</p>
+
+                <div class="button-group">
+                    <a href="https://healthsync-b721dd.netlify.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="HealthSync">View Site</a>
+                    <a href="https://github.com/fkabaklic/healthsync" target="_blank" rel="noopener noreferrer" class="github-button">
+                        <img src="img/github.svg" alt="GitHub" width="16" height="16">
+                        GitHub
+                    </a>
                 </div>
-            </div>
-            <div class="image-container">
-                <img src="img/healthsync_full.png" alt="HealthSync homepage screenshot" loading="lazy">
-            </div>
-            <div class="image-container">
-                <img src="img/healthsync_plans.png" alt="HealthSync plans page" loading="lazy">
-            </div>
-            <div class="image-container">
-                <img src="img/healthsync_resources.png" alt="HealthSync resources page" loading="lazy">
+            </aside>
+
+            <div class="project-detail__body">
+                <figure class="image-container project-detail__hero">
+                    <img src="img/healthsync_full.png" alt="HealthSync homepage screenshot" loading="lazy">
+                </figure>
+
+                <section class="case-section">
+                    <h2>The brief.</h2>
+                    <p>HealthSync began as a concept for a CGM (continuous glucose monitor) brand — a device and companion app for people managing diabetes and anyone tracking how food affects them.</p>
+                    <p>The assignment's real goal was to demonstrate modern CSS layout: Grid and Flexbox. I proposed scoping to a homepage and product overview, then built past that to a full five-page site — home, plans, resources, an article template, and an FAQ — so the layout system had to hold up across genuinely different page types, not just one.</p>
+                </section>
+
+                <section class="case-section">
+                    <h2>Architecture.</h2>
+                    <p>Hand-written HTML and CSS, no framework, no build step. The whole site runs on a small set of reusable utility classes — a CSS custom-property palette (<code>--darkblue</code>, <code>--lightblue</code>, <code>--offwhite</code>) and type-scale classes (<code>.xlg</code>, <code>.lg</code>, <code>.sm-gray</code>) applied across every page — so styling stays consistent without repeating myself.</p>
+                    <p>Layout is Grid where structure is two-dimensional (the pricing cards, the resource grid, the split product sections) and Flexbox where it's one axis (the nav, the FAQ rows). A small vanilla-JS accordion drives the FAQ. Responsive down to mobile, with keyboard-accessible controls and reduced-motion respected.</p>
+                </section>
+
+                <figure class="image-container">
+                    <img src="img/healthsync_plans.png" alt="HealthSync plans page" loading="lazy">
+                </figure>
+
+                <section class="case-section">
+                    <h2>The interesting problems.</h2>
+                    <ul class="case-list">
+                        <li><strong>One system, five different page types</strong> — the challenge wasn't any single page; it was making a homepage, pricing page, card-based resource index, long-form article, and FAQ all feel like one product using a shared utility-class system.</li>
+                        <li><strong>The pricing layout</strong> — a two-column Grid pairing the product image with a stack of plan cards, each card a Flexbox row for the price and divider, so the commerce layout stays aligned as content varies.</li>
+                        <li><strong>An accessible FAQ accordion</strong> — built from scratch in vanilla JS: collapses by default, toggles independently per item, rotates its indicator, and exposes <code>aria-expanded</code> for screen readers.</li>
+                        <li><strong>A designer's build</strong> — the restrained near-black/off-white palette, type hierarchy, and generous whitespace are deliberate brand choices that make the concept read like a real health-tech product.</li>
+                    </ul>
+                </section>
+
+                <figure class="image-container">
+                    <img src="img/healthsync_resources.png" alt="HealthSync resources page" loading="lazy">
+                </figure>
+
+                <section class="case-section">
+                    <h2>What I'd build next.</h2>
+                    <p>It's a static concept site — the honest next steps are the real product behind it: a working plan-selection and checkout flow, and the app-dashboard view from the original brief (real-time glucose data, trends, insights), which is where it'd shift from a layout showcase into an application.</p>
+                </section>
             </div>
         </div>
     </div>

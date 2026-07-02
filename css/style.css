@@ -93,9 +93,9 @@
     --card-tag-bg: rgba(10, 10, 15, 0.5);
     --card-tag-border: rgba(255, 255, 255, 0.2);
     --card-tag-text: var(--c-paper);
-    --tag-chip-bg: var(--accent-soft);
-    --tag-chip-border: var(--pill-border);
-    --tag-chip-text: var(--accent);
+    --tag-chip-bg: rgba(246, 247, 249, 0.92);
+    --tag-chip-border: rgba(255, 255, 255, 0.72);
+    --tag-chip-text: var(--c-ink);
     --more-work-border: var(--border);
     --btn-secondary-bg: transparent;
     --btn-secondary-border: var(--border-strong);
@@ -445,6 +445,7 @@ nav {
     letter-spacing: var(--tracking-tight);
     line-height: 1;
     white-space: nowrap;
+    text-transform: uppercase;
 }
 
 .site-nav__actions {
@@ -728,6 +729,7 @@ body.menu-open nav {
     font-weight: var(--fw-bold);
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
     margin: var(--space-6) 0 var(--space-4);
     text-align: left;
 }
@@ -854,8 +856,8 @@ body.menu-open nav {
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-12) var(--space-8);
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
     max-width: var(--content-max);
     margin: 0 auto;
     padding: 0 var(--space-4);
@@ -1321,10 +1323,10 @@ body.menu-open nav {
     font-size: var(--text-caption);
     font-weight: var(--fw-medium);
     padding: var(--space-1) var(--space-3);
-    background: var(--tag-chip-bg);
-    border: 1px solid var(--tag-chip-border);
-    color: var(--tag-chip-text);
-    box-shadow: var(--shadow-sm);
+    background: var(--c-tint);
+    border: 1px solid var(--accent);
+    color: var(--c-signal);
+    box-shadow: none;
 }
 
 .about {
@@ -1405,6 +1407,91 @@ body.menu-open nav {
 
 .github-button:hover img {
     transform: scale(1.1);
+}
+
+.project-detail--case-study {
+    grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.65fr);
+    align-items: start;
+}
+
+.project-detail__intro {
+    top: calc(var(--nav-offset) + var(--space-8));
+    padding: var(--space-8);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.project-eyebrow {
+    margin-bottom: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.project-dek {
+    margin-top: var(--space-6);
+    font-size: var(--text-body);
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.project-detail__body {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.project-detail__body .image-container {
+    grid-column: auto;
+    margin-bottom: 0;
+}
+
+.project-detail__hero img {
+    border-radius: var(--radius-lg);
+}
+
+.case-section {
+    padding: var(--space-8);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.case-section h2 {
+    margin-bottom: var(--space-4);
+    font-size: var(--text-h3);
+}
+
+.case-section p,
+.case-list {
+    font-size: var(--text-body);
+    line-height: 1.75;
+    color: var(--text-muted);
+}
+
+.case-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin: 0;
+    padding-left: var(--space-6);
+}
+
+.case-list strong {
+    color: var(--text);
+}
+
+.case-section code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    color: var(--accent);
 }
 
 /* ==========================================================================
@@ -1800,6 +1887,19 @@ body.menu-open nav {
     .text-content {
         position: relative;
         top: 0;
+    }
+
+    .project-detail__intro {
+        padding: var(--space-6);
+    }
+
+    .project-detail__body {
+        grid-column: 1;
+        gap: var(--space-6);
+    }
+
+    .case-section {
+        padding: var(--space-6);
     }
 
     .image-container {
