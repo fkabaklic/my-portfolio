@@ -1776,7 +1776,7 @@ body.menu-open nav {
     }
 
     .site-nav__mark {
-        width: 50px;
+        width: 30px;
     }
 
     body.menu-open nav {
@@ -1810,14 +1810,15 @@ body.menu-open nav {
     }
 
     .hero {
-        height: calc(100dvh - var(--nav-offset) - var(--nav-content-gap));
-        min-height: calc(100vh - var(--nav-offset) - var(--nav-content-gap));
-        max-height: calc(100dvh - var(--nav-offset) - var(--nav-content-gap));
+        height: auto;
+        min-height: 0;
+        max-height: none;
         width: 100%;
         max-width: 100%;
         margin-left: 0;
         margin-bottom: var(--space-12);
         text-align: center;
+        overflow: visible;
     }
 
     .hero-main,
@@ -1831,6 +1832,8 @@ body.menu-open nav {
     .hero-main {
         flex-direction: column-reverse;
         gap: var(--space-6);
+        flex: none;
+        min-height: calc(100dvh - var(--nav-offset) - var(--nav-content-gap));
     }
 
     .contact-cta-main {
@@ -1912,6 +1915,10 @@ body.menu-open nav {
         margin: 0;
         padding: 0;
         width: 100%;
+    }
+
+    .card-tags {
+        display: none;
     }
 
     .projects--featured .card--featured {
