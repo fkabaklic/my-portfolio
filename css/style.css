@@ -1705,8 +1705,9 @@ body.menu-open nav {
     opacity: 0.8;
 }
 
+:root[data-theme="dark"] .btn-primary,
 :root[data-theme="dark"] .btn-primary:hover {
-    color: var(--on-accent);
+    color: var(--c-paper);
 }
 
 :root[data-theme="dark"] .toolbox-marquee-item img[src$="github.svg"] {
@@ -1868,6 +1869,7 @@ body.menu-open nav {
     .contact-cta-content {
         align-items: center;
         text-align: center;
+        gap: var(--space-4);
     }
 
 

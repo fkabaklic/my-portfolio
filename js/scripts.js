@@ -54,14 +54,14 @@ function toggleDarkMode() {
 
 function applyDarkModePreference() {
   const stored = localStorage.getItem('darkMode');
-  let isDark = false;
+  let isDark = true;
 
   if (stored === 'enabled') {
     isDark = true;
   } else if (stored === 'disabled') {
     isDark = false;
   } else {
-    isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    isDark = true;
   }
 
   applyTheme(isDark);
