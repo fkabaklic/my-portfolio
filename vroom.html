@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vroom — a full-stack car rental platform built with Express, EJS, sessions, and MariaDB by Faris Kabaklic.">
+    <meta name="description" content="Vroom is a full-stack car rental platform built with Express, EJS, sessions, and MariaDB by Faris Kabaklic.">
     <title>Vroom | Faris Kabaklic</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script>
+        (function () {
+            var stored = localStorage.getItem('darkMode');
+            var theme = stored === 'disabled' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5DGVQ6FV3"></script>
@@ -32,8 +40,8 @@
                     <a href="index.html#contact" class="nav-link">Contact</a>
                 </div>
                 <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
-                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <i class="theme-toggle__icon theme-toggle__icon--moon fa-solid fa-moon" aria-hidden="true"></i>
+                    <i class="theme-toggle__icon theme-toggle__icon--sun fa-solid fa-sun" aria-hidden="true" hidden></i>
                 </button>
                 <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
                     <span></span>
@@ -62,12 +70,12 @@
                     <div class="tag">MariaDB</div>
                     <div class="tag">SQL</div>
                 </div>
-                <p class="project-dek">A full-stack car rental platform — a server-rendered Express app with session-based authentication and a MariaDB database I query directly with SQL, no ORM. Built solo as my DePaul capstone.</p>
+                <p class="project-dek">A full-stack car rental platform built as a server-rendered Express app with session-based authentication and a MariaDB database I query directly with SQL, no ORM. I built it solo as my DePaul capstone.</p>
 
                 <div class="button-group">
                     <a href="https://vroom-fkabaklics-projects.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="Vroom">View Site</a>
                     <a href="https://github.com/fkabaklic/vroom" target="_blank" rel="noopener noreferrer" class="github-button">
-                        <img src="img/github.svg" alt="GitHub" width="16" height="16">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i>
                         GitHub
                     </a>
                 </div>
@@ -80,23 +88,23 @@
 
                 <section class="case-section">
                     <h2>The brief.</h2>
-                    <p>Vroom started as a business proposal for a peer-to-peer rental marketplace — car owners listing idle vehicles for renters to book, Turo-style, aimed at travelers and remote workers.</p>
-                    <p>From that vision I scoped and built the core rental engine: the parts that had to be solid before any marketplace layer made sense — accounts, vehicle inventory, and bookings.</p>
+                    <p>Vroom started as a business proposal for a peer-to-peer rental marketplace where car owners list idle vehicles for renters to book, Turo-style, aimed at travelers and remote workers.</p>
+                    <p>From that vision I scoped and built the core rental engine: the parts that had to be solid before any marketplace layer made sense: accounts, vehicle inventory, and bookings.</p>
                 </section>
 
                 <section class="case-section">
                     <h2>Architecture.</h2>
                     <p>Server-rendered with Express and EJS layouts, so pages are assembled on the server rather than shipped as a client bundle. Authentication runs on <code>express-session</code> with <code>bcrypt</code>-hashed passwords.</p>
-                    <p>The data layer is MariaDB accessed through the native driver — I wrote the schema and every query by hand rather than reaching for an ORM, because I wanted to understand exactly what each query did instead of trusting an abstraction to do it for me. Configuration lives in environment variables, requests are logged with Morgan, and it's deployed on Vercel.</p>
+                    <p>The data layer is MariaDB accessed through the native driver. I wrote the schema and every query by hand instead of reaching for an ORM, because I wanted to understand exactly what each query did rather than trust an abstraction to do it for me. Configuration lives in environment variables, requests are logged with Morgan, and it's deployed on Vercel.</p>
                 </section>
 
                 <section class="case-section">
                     <h2>The interesting problems.</h2>
                     <ul class="case-list">
-                        <li><strong>Authentication, done properly</strong> — session-based login with bcrypt password hashing: no plaintext, no shortcuts. Getting the session lifecycle and password handling right is unglamorous and exactly the kind of thing that has to be correct.</li>
-                        <li><strong>Modeling the data by hand</strong> — users, vehicles, and bookings as related tables, joined with SQL I wrote myself; a from-scratch relational model rather than an ORM's generated one.</li>
-                        <li><strong>Server-rendered, on purpose</strong> — choosing EJS and server rendering over a client framework kept the app simple and fast for what it needed to do: the right tool for the scope, not the flashiest one.</li>
-                        <li><strong>Booking and availability</strong> — the platform establishes the booking model around users, vehicles, and rental dates; the next hardening step is date-range conflict handling so the same car cannot be double-booked.</li>
+                        <li><strong>Authentication, done properly.</strong> Session-based login with bcrypt password hashing means no plaintext and no shortcuts. Getting the session lifecycle and password handling right is unglamorous, but it has to be correct.</li>
+                        <li><strong>Modeling the data by hand.</strong> Users, vehicles, and bookings are related tables joined with SQL I wrote myself. It is a from-scratch relational model rather than an ORM-generated one.</li>
+                        <li><strong>Server-rendered, on purpose.</strong> Choosing EJS and server rendering over a client framework kept the app simple and fast for what it needed to do: the right tool for the scope, not the flashiest one.</li>
+                        <li><strong>Booking and availability.</strong> The platform establishes the booking model around users, vehicles, and rental dates. The next hardening step is date-range conflict handling so the same car cannot be double-booked.</li>
                     </ul>
                 </section>
 
@@ -113,9 +121,9 @@
         <div class="site-footer__inner">
             <p class="site-footer__copy">&copy; 2026 Faris Kabaklic</p>
             <div class="site-footer__links" aria-label="Footer">
-                <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+                <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></a>
+                <a href="resume.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-file" aria-hidden="true"></i><span>Resume</span></a>
             </div>
         </div>
     </footer>

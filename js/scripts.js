@@ -37,14 +37,6 @@ function updateDarkModeToggleLabels() {
       sun.hidden = !isDark;
     }
   });
-
-  updateGithubButtonIcons();
-}
-
-function updateGithubButtonIcons() {
-  document.querySelectorAll('.github-button img').forEach((img) => {
-    img.src = isDarkTheme() ? 'img/github-light.svg' : 'img/github.svg';
-  });
 }
 
 function toggleDarkMode() {

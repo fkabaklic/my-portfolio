@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Front-end developer in Chicago with 10 years of design behind the code. React and modern CSS — interfaces that look intentional and work reliably.">
+    <meta name="description" content="Front-end developer in Chicago with 10 years of design behind the code. I build React and modern CSS interfaces that look intentional and work reliably.">
     <title>Faris Kabaklic | Front-End Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script>
+        (function () {
+            var stored = localStorage.getItem('darkMode');
+            var theme = stored === 'disabled' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.png">
     <!-- Google tag (gtag.js) -->
@@ -33,8 +41,8 @@
                     <a href="index.html#contact" class="nav-link">Contact</a>
                 </div>
                 <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
-                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <i class="theme-toggle__icon theme-toggle__icon--moon fa-solid fa-moon" aria-hidden="true"></i>
+                    <i class="theme-toggle__icon theme-toggle__icon--sun fa-solid fa-sun" aria-hidden="true" hidden></i>
                 </button>
                 <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
                     <span></span>
@@ -119,12 +127,12 @@
                             <div class="card-actions">
                                 <a href="https://8ighty8-supply-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="8ighty8 Supply">View Site</a>
                                 <a href="https://github.com/fkabaklic/8ighty8-supply" target="_blank" rel="noopener noreferrer" class="github-button" aria-label="8ighty8 Supply on GitHub">
-                                    <img src="img/github.svg" alt="" width="16" height="16">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                    GitHub
                                 </a>
                             </div>
                         </div>
-                        <p class="card-desc">Premium component marketplace with live demos and curated design assets — 
-                            built in React.</p>
+                        <p class="card-desc">React component marketplace with live previews, routed product pages, and a hand-built UI system.</p>
                     </div>
                 </article>
                 <article class="card">
@@ -144,11 +152,12 @@
                             <div class="card-actions">
                                 <a href="https://healthsync-b721dd.netlify.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="HealthSync">View Site</a>
                                 <a href="https://github.com/fkabaklic/healthsync" target="_blank" rel="noopener noreferrer" class="github-button" aria-label="HealthSync on GitHub">
-                                    <img src="img/github.svg" alt="" width="16" height="16">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                    GitHub
                                 </a>
                             </div>
                         </div>
-                        <p class="card-desc">Responsive CGM app concept for a fictional health brand — built with flexbox and grid.</p>
+                        <p class="card-desc">Health-tech marketing site built with responsive CSS Grid and Flexbox layouts.</p>
                     </div>
                 </article>
                 <article class="card">
@@ -169,11 +178,12 @@
                             <div class="card-actions">
                                 <a href="https://vroom-fkabaklics-projects.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="Vroom">View Site</a>
                                 <a href="https://github.com/fkabaklic/vroom" target="_blank" rel="noopener noreferrer" class="github-button" aria-label="Vroom on GitHub">
-                                    <img src="img/github.svg" alt="" width="16" height="16">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                    GitHub
                                 </a>
                             </div>
                         </div>
-                        <p class="card-desc">Full-stack car rental platform with Express.js, auth, and booking.</p>
+                        <p class="card-desc">Car rental platform with Express.js, auth, and booking.</p>
                     </div>
                 </article>
                 <article class="card">
@@ -202,7 +212,7 @@
         <section class="about-snippet" id="about">
             <div class="about-snippet-inner">
                 <img src="img/coding.png" alt="" class="about-snippet-image" width="400" height="400" aria-hidden="true">
-                <p class="about-snippet-text">Designer-turned-developer with 10+ years across web, mobile, and brand — currently finishing a B.S. in Web Development at DePaul. I combine design sensibility with hands-on front-end engineering in React, Node.js, and modern CSS.</p>
+                <p class="about-snippet-text">Designer-turned-developer with 10+ years across web, mobile, and brand, currently finishing a B.S. in Web Development at DePaul. I combine design sensibility with hands-on front-end engineering in React, Node.js, and modern CSS.</p>
                 <a href="about.html" class="btn btn-secondary">More about me</a>
             </div>
         </section>
@@ -213,7 +223,7 @@
                 <div class="contact-cta-content">
                     <h2 class="contact-cta-title">Let's connect</h2>
                     <p class="contact-cta-sub">Open to freelance projects and full-time roles.</p>
-                    <a href="mailto:faris.kabaklic@gmail.com" class="btn btn-primary">faris.kabaklic@gmail.com</a>
+                    <a href="mailto:faris.kabaklic@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email me</a>
                 </div>
             </div>
         </section>
@@ -222,9 +232,9 @@
             <div class="site-footer__inner">
                 <p class="site-footer__copy">&copy; 2026 Faris Kabaklic</p>
                 <div class="site-footer__links" aria-label="Footer">
-                    <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                    <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+                    <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></a>
+                    <a href="resume.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-file" aria-hidden="true"></i><span>Resume</span></a>
                 </div>
             </div>
         </footer>
