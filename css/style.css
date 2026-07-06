@@ -1959,6 +1959,7 @@ body.menu-open nav {
 
     .card-body {
         gap: var(--space-3);
+        padding: 0;
     }
 
     .hero {
