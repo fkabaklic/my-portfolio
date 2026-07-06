@@ -209,11 +209,68 @@
             </div>
         </section>
 
-        <section class="about-snippet" id="about">
-            <div class="about-snippet-inner">
-                <img src="img/coding.png" alt="" class="about-snippet-image" width="400" height="400" aria-hidden="true">
-                <p class="about-snippet-text">Designer-turned-developer with 10+ years across web, mobile, and brand, currently finishing a B.S. in Web Development at DePaul. I combine design sensibility with hands-on front-end engineering in React, Node.js, and modern CSS.</p>
-                <a href="about.html" class="btn btn-secondary">More about me</a>
+        <section class="under-hood-section" id="under-the-hood">
+            <div class="section-header">
+                <span class="section-label">Under the hood</span>
+                <h2 class="section-title">Built with fundamentals.</h2>
+            </div>
+            <p class="under-hood-intro">This portfolio is intentionally hand-built with semantic HTML, responsive CSS, and JavaScript behaviors. No heavy framework is needed for the core experience.</p>
+            <div class="under-hood-grid">
+                <article class="builtby__code">
+                    <div class="builtby__bar">
+                        <span class="builtby__dot builtby__dot--r"></span>
+                        <span class="builtby__dot builtby__dot--y"></span>
+                        <span class="builtby__dot builtby__dot--g"></span>
+                        <span class="builtby__file">index.html</span>
+                    </div>
+                    <pre><code>&lt;div class=<span class="tok-str">"hero-main"</span>&gt;
+  &lt;img src="img/waving.png"
+    alt=""
+    class="hero-wave"
+    aria-hidden="true"&gt;
+  &lt;div class="hero-content"&gt;
+    &lt;h1 class="hero-title"&gt;
+      Developer with a designer's eye.
+    &lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </article>
+                <article class="builtby__code">
+                    <div class="builtby__bar">
+                        <span class="builtby__dot builtby__dot--r"></span>
+                        <span class="builtby__dot builtby__dot--y"></span>
+                        <span class="builtby__dot builtby__dot--g"></span>
+                        <span class="builtby__file">style.css</span>
+                    </div>
+                    <pre><code><span class="tok-com">/* Primitive tokens */</span>
+:root {
+  --c-ink: #0A0A0F;
+  --c-paper: #FFFFFF;
+  --space-6: 1.5rem;
+
+  <span class="tok-com">/* Semantic roles */</span>
+  --bg: var(--c-paper);
+  --text: var(--c-ink);
+  --accent: var(--c-signal-500);
+  --surface: var(--c-100);
+}</code></pre>
+                </article>
+                <article class="builtby__code">
+                    <div class="builtby__bar">
+                        <span class="builtby__dot builtby__dot--r"></span>
+                        <span class="builtby__dot builtby__dot--y"></span>
+                        <span class="builtby__dot builtby__dot--g"></span>
+                        <span class="builtby__file">scripts.js</span>
+                    </div>
+                    <pre><code><span class="tok-key">const</span> sectionObserver =
+  new IntersectionObserver((entries, observer) =&gt; {
+    entries.forEach((entry) =&gt; {
+      if (entry.isIntersecting) {
+        <span class="tok-fn">reveal</span>(entry.target, observer);
+      }
+    });
+  });</code></pre>
+                </article>
             </div>
         </section>
 
@@ -221,9 +278,13 @@
             <div class="contact-cta-main">
                 <img src="img/connect.png" alt="" class="contact-cta-image" width="800" height="800" aria-hidden="true">
                 <div class="contact-cta-content">
+                    <div class="availability-pill">
+                        <span class="availability-pill__dot" aria-hidden="true"></span>
+                        <span class="availability-pill__text">Available now</span>
+                    </div>
                     <h2 class="contact-cta-title">Let's connect</h2>
-                    <p class="contact-cta-sub">Open to freelance projects and full-time roles.</p>
-                    <a href="mailto:faris.kabaklic@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email me</a>
+                    <p class="contact-cta-sub">Open to freelance projects and select work.</p>
+                    <a href="mailto:faris.kabaklic@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Hire me</a>
                 </div>
             </div>
         </section>
