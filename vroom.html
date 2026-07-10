@@ -65,9 +65,8 @@
                 <h2>A full-stack car rental platform, built to show backend fundamentals.</h2>
                 <div class="tags">
                     <div class="tag">Express</div>
-                    <div class="tag">EJS</div>
-                    <div class="tag">MariaDB</div>
                     <div class="tag">SQL</div>
+                    <div class="tag">Tailwind</div>
                 </div>
                 <p class="project-dek">A full-stack car rental platform built as a server-rendered Express app with session-based authentication and a MariaDB database I query directly with SQL, no ORM. I built it solo as my DePaul capstone.</p>
 
@@ -88,28 +87,29 @@
                 <section class="case-section">
                     <h2>The brief.</h2>
                     <p>Vroom started as a business proposal for a peer-to-peer rental marketplace where car owners list idle vehicles for renters to book, Turo-style, aimed at travelers and remote workers.</p>
-                    <p>From that vision I scoped and built the core rental engine: the parts that had to be solid before any marketplace layer made sense: accounts, vehicle inventory, and bookings.</p>
+                    <p>From that vision I scoped and built the core rental engine: the parts that had to be solid before any marketplace layer made sense. That meant accounts, vehicle inventory, and bookings.</p>
                 </section>
 
                 <section class="case-section">
                     <h2>Architecture.</h2>
-                    <p>Server-rendered with Express and EJS layouts, so pages are assembled on the server rather than shipped as a client bundle. Authentication runs on <code>express-session</code> with <code>bcrypt</code>-hashed passwords.</p>
-                    <p>The data layer is MariaDB accessed through the native driver. I wrote the schema and every query by hand instead of reaching for an ORM, because I wanted to understand exactly what each query did rather than trust an abstraction to do it for me. Configuration lives in environment variables, requests are logged with Morgan, and it's deployed on Vercel.</p>
+                    <p>Server-rendered with Express and EJS, so pages are assembled on the server rather than shipped as a client bundle. The interface is styled in Tailwind CSS, compiled through its own build step. Authentication runs on <code>express-session</code> with <code>bcrypt</code>-hashed passwords.</p>
+                    <p>The data layer is MariaDB hosted on Railway, accessed through the native driver. I wrote the schema and every query by hand instead of reaching for an ORM, because I wanted to understand exactly what each query did rather than trust an abstraction to do it for me. Configuration lives in environment variables, requests are logged with Morgan, and the app is deployed on Vercel against the Railway-hosted database.</p>
                 </section>
 
                 <section class="case-section">
                     <h2>The interesting problems.</h2>
                     <ul class="case-list">
                         <li><strong>Authentication, done properly.</strong> Session-based login with bcrypt password hashing means no plaintext and no shortcuts. Getting the session lifecycle and password handling right is unglamorous, but it has to be correct.</li>
-                        <li><strong>Modeling the data by hand.</strong> Users, vehicles, and bookings are related tables joined with SQL I wrote myself. It is a from-scratch relational model rather than an ORM-generated one.</li>
-                        <li><strong>Server-rendered, on purpose.</strong> Choosing EJS and server rendering over a client framework kept the app simple and fast for what it needed to do: the right tool for the scope, not the flashiest one.</li>
-                        <li><strong>Booking and availability.</strong> The platform establishes the booking model around users, vehicles, and rental dates. The next hardening step is date-range conflict handling so the same car cannot be double-booked.</li>
+                        <li><strong>Modeling the data by hand.</strong> Users, vehicles, and bookings are related tables joined with SQL I wrote myself. It's a from-scratch relational model rather than an ORM-generated one, with my own scripts to initialize, seed, and test the database.</li>
+                        <li><strong>Wiring up hosted infrastructure.</strong> Moving the database to a managed Railway instance meant handling connection config, environment separation, and a deploy that talks to a remote DB. It's the unglamorous plumbing that makes a project run for other people, not just on my machine.</li>
+                        <li><strong>Server-rendered, on purpose.</strong> Choosing EJS and server rendering over a client framework kept the app simple and fast for its scope. The right tool for the job, not the flashiest one.</li>
+                        <li><strong>Booking and availability.</strong> The platform models bookings around users, vehicles, and rental dates. The next hardening step is date-range conflict handling so the same car can't be double-booked.</li>
                     </ul>
                 </section>
 
                 <section class="case-section">
                     <h2>What I'd build next.</h2>
-                    <p>The proposal imagined a revenue-generating marketplace; the shipped app is the core engine without payments or the owner-listing side. The honest roadmap is a payment flow to realize the marketplace vision, peer-to-peer listing features that let owners put their own cars up, and availability-conflict handling for overlapping booking dates.</p>
+                    <p>The proposal imagined a revenue-generating marketplace. The shipped app is the core engine. The honest roadmap is a payment flow to realize the marketplace vision, peer-to-peer listing features that let owners put their own cars up, and date-overlap conflict handling so bookings can't collide.</p>
                 </section>
             </div>
         </div>
