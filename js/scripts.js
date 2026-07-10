@@ -65,7 +65,7 @@ function initSectionReveal() {
   }
 
   const sections = document.querySelectorAll(
-    '#main-content > section:not(.hero):not(.under-hood-section):not(.contact-cta), main.about-grid > section, .container'
+    '#main-content > section:not(.hero):not(.under-hood-section):not(.contact-cta), .about-grid > section, .container'
   );
 
   if (sections.length === 0) {
@@ -134,12 +134,7 @@ function initScrollReveal() {
     rootMargin: '0px 0px -6% 0px',
   });
 
-  observeScrollReveal(document.querySelectorAll('.site-footer'), {
-    threshold: 0,
-    rootMargin: '0px 0px 120px 0px',
-  });
-
-  observeScrollReveal(document.querySelectorAll('.contact-cta-content'), {
+  observeScrollReveal(document.querySelectorAll('.contact-cta-main'), {
     threshold: 0.15,
     rootMargin: '0px 0px -6% 0px',
   });
@@ -322,6 +317,8 @@ function initToolboxMarquee() {
       },
       { once: true }
     );
+  } else if (!prefersReducedMotion) {
+    startMarqueeAnimation();
   }
 
   window.addEventListener('resize', debouncedResize, { passive: true });
@@ -361,8 +358,33 @@ function trackProjectView(projectName) {
   }
 }
 
+
+function initFooterReveal() {
+  const footer = document.querySelector('.site-footer');
+  const shell = document.querySelector('.page-shell');
+  if (!footer || !shell) return;
+
+  const sync = () => {
+    const height = Math.ceil(footer.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--footer-reveal', height + 'px');
+  };
+
+  sync();
+  window.addEventListener('resize', sync, { passive: true });
+
+  if (typeof ResizeObserver !== 'undefined') {
+    const ro = new ResizeObserver(sync);
+    ro.observe(footer);
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(sync);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   applyDarkModePreference();
+  initFooterReveal();
   updateDarkModeToggleLabels();
   initSectionReveal();
   initScrollReveal();

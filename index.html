@@ -27,38 +27,23 @@
     </script>
 </head>
 <body>
-    <nav class="site-nav">
+        <div class="page-shell">
+    <nav class="site-nav" aria-label="Primary">
         <div class="site-nav__inner">
-            <a href="index.html" class="site-nav__brand">
-                <img src="img/logo.svg" class="site-nav__mark" alt="" width="26" height="20">
-                <span class="site-nav__name">Faris Kabaklic</span>
-            </a>
-            <div class="site-nav__actions">
-                <div class="site-nav__links">
-                    <a href="index.html#projects" class="nav-link">Work</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="index.html#contact" class="nav-link">Contact</a>
-                </div>
-                <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
-                    <span class="icon theme-toggle__icon theme-toggle__icon--moon" data-icon="moon" aria-hidden="true"></span>
-                    <span class="icon theme-toggle__icon theme-toggle__icon--sun" data-icon="sun" aria-hidden="true" hidden></span>
-                </button>
-                <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+            <div class="site-nav__links">
+                <a href="index.html#projects" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
             </div>
+            <span class="site-nav__divider" aria-hidden="true"></span>
+            <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
+                <span class="icon theme-toggle__icon theme-toggle__icon--moon" data-icon="moon" aria-hidden="true"></span>
+                <span class="icon theme-toggle__icon theme-toggle__icon--sun" data-icon="sun" aria-hidden="true" hidden></span>
+            </button>
         </div>
     </nav>
 
-    <div class="menu-overlay" id="menuOverlay">
-        <a href="index.html#projects">Work</a>
-        <a href="about.html">About</a>
-        <a href="index.html#contact">Contact</a>
-    </div>
-
-    <div id="main-content">
+<div id="main-content">
         <section class="hero">
             <div class="hero-main">
                 <img src="img/waving.png" alt="" class="hero-wave" width="800" height="800" aria-hidden="true">
@@ -112,24 +97,24 @@
                     <a href="8ighty8-supply.html" class="card-cover">
                         <div class="card-media">
                             <img src="img/8ighty8_supply.png" alt="8ighty8 Supply marketplace" loading="lazy" width="550" height="310">
-                            <div class="card-tags">
-                                <span class="tag">React</span>
-                                <span class="tag">Vite</span>
-                                <span class="tag">React Router</span>
-                            </div>
-                            <div class="card-overlay" aria-hidden="true"></div>
                         </div>
                     </a>
                     <div class="card-body">
                         <div class="card-heading">
                             <h3><a href="8ighty8-supply.html">8ighty8 Supply</a></h3>
-                            <div class="card-actions">
-                                <a href="https://8ighty8-supply-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="8ighty8 Supply">View Site</a>
-                                <a href="https://github.com/fkabaklic/8ighty8-supply" target="_blank" rel="noopener noreferrer" class="github-button" aria-label="8ighty8 Supply on GitHub">
-                                    <span class="icon" data-icon="github" aria-hidden="true"></span>
-                                    GitHub
-                                </a>
-                            </div>
+                        <div class="card-actions">
+                            <a href="https://8ighty8-supply-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-action" data-project="8ighty8 Supply" aria-label="View 8ighty8 Supply site">
+                                <span class="icon" data-icon="arrow-top-right-on-square" aria-hidden="true"></span>
+                            </a>
+                            <a href="https://github.com/fkabaklic/8ighty8-supply" target="_blank" rel="noopener noreferrer" class="card-action" aria-label="8ighty8 Supply on GitHub">
+                                <span class="icon" data-icon="github" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">React Router</span>
                         </div>
                         <p class="card-desc">React component marketplace with live previews, routed product pages, and a hand-built UI system.</p>
                     </div>
@@ -138,24 +123,24 @@
                     <a href="vroom.html" class="card-cover">
                         <div class="card-media">
                             <img src="img/vroom.png" alt="Vroom car rental platform" loading="lazy" width="550" height="310">
-                            <div class="card-tags">
-                                <span class="tag">Express.js</span>
-                                <span class="tag">Node.js</span>
-                                <span class="tag">Tailwind</span>
-                            </div>
-                            <div class="card-overlay" aria-hidden="true"></div>
                         </div>
                     </a>
                     <div class="card-body">
                         <div class="card-heading">
                             <h3><a href="vroom.html">Vroom</a></h3>
-                            <div class="card-actions">
-                                <a href="https://vroom-fkabaklics-projects.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="Vroom">View Site</a>
-                                <a href="https://github.com/fkabaklic/vroom" target="_blank" rel="noopener noreferrer" class="github-button" aria-label="Vroom on GitHub">
-                                    <span class="icon" data-icon="github" aria-hidden="true"></span>
-                                    GitHub
-                                </a>
-                            </div>
+                        <div class="card-actions">
+                            <a href="https://vroom-fkabaklics-projects.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-action" data-project="Vroom" aria-label="View Vroom site">
+                                <span class="icon" data-icon="arrow-top-right-on-square" aria-hidden="true"></span>
+                            </a>
+                            <a href="https://github.com/fkabaklic/vroom" target="_blank" rel="noopener noreferrer" class="card-action" aria-label="Vroom on GitHub">
+                                <span class="icon" data-icon="github" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Express.js</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Tailwind</span>
                         </div>
                         <p class="card-desc">Car rental platform with Express.js and Node.js.</p>
                     </div>
@@ -164,23 +149,23 @@
                     <a href="healthsync.html" class="card-cover">
                         <div class="card-media">
                             <img src="img/healthsync.png" alt="HealthSync glucose monitor app" loading="lazy" width="550" height="310">
-                            <div class="card-tags">
-                                <span class="tag">CSS Grid</span>
-                                <span class="tag">Flexbox</span>
-                            </div>
-                            <div class="card-overlay" aria-hidden="true"></div>
                         </div>
                     </a>
                     <div class="card-body">
                         <div class="card-heading">
                             <h3><a href="healthsync.html">HealthSync</a></h3>
-                            <div class="card-actions">
-                                <a href="https://healthsync-b721dd.netlify.app/" target="_blank" rel="noopener noreferrer" class="view-button" data-project="HealthSync">View Site</a>
-                                <a href="https://github.com/fkabaklic/healthsync" target="_blank" rel="noopener noreferrer" class="github-button" aria-label="HealthSync on GitHub">
-                                    <span class="icon" data-icon="github" aria-hidden="true"></span>
-                                    GitHub
-                                </a>
-                            </div>
+                        <div class="card-actions">
+                            <a href="https://healthsync-b721dd.netlify.app/" target="_blank" rel="noopener noreferrer" class="card-action" data-project="HealthSync" aria-label="View HealthSync site">
+                                <span class="icon" data-icon="arrow-top-right-on-square" aria-hidden="true"></span>
+                            </a>
+                            <a href="https://github.com/fkabaklic/healthsync" target="_blank" rel="noopener noreferrer" class="card-action" aria-label="HealthSync on GitHub">
+                                <span class="icon" data-icon="github" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">CSS Grid</span>
+                            <span class="tag">Flexbox</span>
                         </div>
                         <p class="card-desc">Health-tech marketing site built with responsive CSS Grid and Flexbox layouts.</p>
                     </div>
@@ -189,18 +174,16 @@
                     <a href="fitly.html" class="card-cover">
                         <div class="card-media">
                             <img src="img/fitly.png" alt="Fitly AI fitness trainer branding" loading="lazy" width="550" height="310">
-                            <div class="card-tags">
-                                <span class="tag">Mobile App</span>
-                                <span class="tag">Branding</span>
-                            </div>
-                            <div class="card-overlay" aria-hidden="true"></div>
                         </div>
                     </a>
                     <div class="card-body">
                         <div class="card-heading">
                             <h3><a href="fitly.html">Fitly</a></h3>
-                            <div class="card-actions">
-                            </div>
+                        <div class="card-actions"></div>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Mobile App</span>
+                            <span class="tag">Branding</span>
                         </div>
                         <p class="card-desc">AI personal trainer concept with workout generation and gym equipment scanning.</p>
                     </div>
@@ -275,30 +258,66 @@
 
         <section class="contact-cta" id="contact">
             <div class="contact-cta-main">
-                <img src="img/connect.png" alt="" class="contact-cta-image" width="800" height="800" aria-hidden="true">
                 <div class="contact-cta-content">
                     <div class="availability-pill">
                         <span class="availability-pill__dot" aria-hidden="true"></span>
-                        <span class="availability-pill__text">Available now</span>
+                        <span class="availability-pill__text">Available · July</span>
                     </div>
                     <h2 class="contact-cta-title">Interested in working together?</h2>
-                    <p class="contact-cta-sub">Open to freelance work and select projects.</p>
-                    <a href="mailto:faris.kabaklic@gmail.com" class="btn btn-primary"><span class="icon" data-icon="envelope" aria-hidden="true"></span>Get in touch</a>
+                    <p class="contact-cta-sub">Picking up new projects for the next few weeks. A site, a product, a rebrand, let's talk.</p>
+                    <div class="contact-cta-actions">
+                        <a href="mailto:faris.kabaklic@gmail.com" class="btn btn-primary">Start a project<span class="icon" data-icon="arrow-top-right-on-square" aria-hidden="true"></span></a>
+                        <a href="#projects" class="contact-cta-secondary">See recent work<span class="icon" data-icon="arrow-right" aria-hidden="true"></span></a>
+                    </div>
                 </div>
+                <aside class="contact-cta-stat" aria-label="Availability">
+                    <p class="contact-cta-stat__value">3</p>
+                    <p class="contact-cta-stat__label">spots left in July.</p>
+                </aside>
             </div>
         </section>
+    </div>
 
-        <footer class="site-footer">
-            <div class="site-footer__inner">
-                <p class="site-footer__copy">&copy; 2026 Faris Kabaklic</p>
-                <div class="site-footer__links" aria-label="Footer">
-                    <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer"><span class="icon" data-icon="github" aria-hidden="true"></span><span>GitHub</span></a>
-                    <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer"><span class="icon" data-icon="linkedin" aria-hidden="true"></span><span>LinkedIn</span></a>
-                    <a href="resume.pdf" target="_blank" rel="noopener noreferrer"><span class="icon" data-icon="document-text" aria-hidden="true"></span><span>Resume</span></a>
+    </div>
+
+    <footer class="site-footer">
+        <div class="site-footer__panel">
+            <div class="site-footer__grid">
+                <div class="site-footer__brand">
+                    <p class="site-footer__tagline">I build interfaces that look intentional and work reliably.</p>
+                    <a href="mailto:faris.kabaklic@gmail.com" class="site-footer__cta">Let's work together <span class="icon" data-icon="arrow-top-right-on-square" aria-hidden="true"></span></a>
+                </div>
+                <nav class="site-footer__nav" aria-label="Footer">
+                    <p class="site-footer__heading">Navigate</p>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#projects">Work</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="site-footer__follow">
+                    <p class="site-footer__heading">Follow</p>
+                    <div class="site-footer__social">
+                        <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="GitHub">
+                            <span class="icon" data-icon="github" aria-hidden="true"></span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="LinkedIn">
+                            <span class="icon" data-icon="linkedin" aria-hidden="true"></span>
+                        </a>
+                        <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Resume">
+                            <span class="icon" data-icon="document-text" aria-hidden="true"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </footer>
-    </div>
+            <p class="site-footer__watermark" aria-hidden="true">FARIS</p>
+            <div class="site-footer__bar">
+                <p class="site-footer__copy">&copy; 2026 Faris Kabaklic. All rights reserved.</p>
+                <p class="site-footer__credit">Designed &amp; built with care.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="js/heroicons.js"></script>
     <script src="js/scripts.js"></script>

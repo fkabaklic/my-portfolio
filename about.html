@@ -27,123 +27,103 @@
     </script>
 </head>
 <body>
-    <nav class="site-nav">
+        <div class="page-shell">
+    <nav class="site-nav" aria-label="Primary">
         <div class="site-nav__inner">
-            <a href="index.html" class="site-nav__brand">
-                <img src="img/logo.svg" class="site-nav__mark" alt="" width="26" height="20">
-                <span class="site-nav__name">Faris Kabaklic</span>
-            </a>
-            <div class="site-nav__actions">
-                <div class="site-nav__links">
-                    <a href="index.html#projects" class="nav-link">Work</a>
-                    <a href="about.html" class="nav-link is-active">About</a>
-                    <a href="index.html#contact" class="nav-link">Contact</a>
-                </div>
-                <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
-                    <span class="icon theme-toggle__icon theme-toggle__icon--moon" data-icon="moon" aria-hidden="true"></span>
-                    <span class="icon theme-toggle__icon theme-toggle__icon--sun" data-icon="sun" aria-hidden="true" hidden></span>
-                </button>
-                <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+            <div class="site-nav__links">
+                <a href="index.html#projects" class="nav-link">Work</a>
+                <a href="about.html" class="nav-link is-active">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
             </div>
+            <span class="site-nav__divider" aria-hidden="true"></span>
+            <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
+                <span class="icon theme-toggle__icon theme-toggle__icon--moon" data-icon="moon" aria-hidden="true"></span>
+                <span class="icon theme-toggle__icon theme-toggle__icon--sun" data-icon="sun" aria-hidden="true" hidden></span>
+            </button>
         </div>
     </nav>
 
-    <div class="menu-overlay" id="menuOverlay">
-        <a href="index.html#projects">Work</a>
-        <a href="about.html">About</a>
-        <a href="index.html#contact">Contact</a>
-    </div>
+<main class="about-page">
+        <p class="about-eyebrow">About me</p>
+        <h1 class="about-tagline">Designer turned developer</h1>
 
-    <main class="about-grid">
-        <section class="about-left">
-            <div class="about-summary">
-                <h2 class="about-heading">About Me</h2>
-                <p>
-                    Designer-turned-developer with 10+ years of professional experience across web, mobile, and brand. Currently completing a B.S. in Web Development at DePaul, I bring a rare combination of design and hands-on front-end engineering, fluent in React, Node.js, and modern CSS, with a track record of shipping real tools used by real teams. I build things that look intentional and work reliably.
-                </p>
-            </div>
+        <div class="about-summary">
+            <p>
+                10+ years across web, mobile, and brand. Currently completing a B.S. in Web Development at DePaul, I bring design craft and hands-on front-end engineering — fluent in React, Node.js, and modern CSS — with a track record of shipping real tools used by real teams. I build things that look intentional and work reliably.
+            </p>
+        </div>
 
-            <div class="about-contact">
-                <a href="mailto:faris.kabaklic@gmail.com" title="Email"><span class="icon contact-icon" data-icon="envelope" aria-hidden="true"></span>faris.kabaklic@gmail.com</a>
-                <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer" title="LinkedIn"><span class="icon contact-icon" data-icon="linkedin" aria-hidden="true"></span>LinkedIn</a>
-            </div>
-        </section>
-        <section class="about-right">
-            <div class="about-label">Experience</div>
-            <div class="about-experience">
-                <div class="block">
-                    <div class="header">
-                        <div>
-                            <div class="title">Senior Graphic Designer</div>
-                            <div class="company">@properties</div>
-                            <div class="date">2023 – Present · Chicago, IL</div>
-                        </div>
-                        <ul>
-                            <li>Engineered a web-based market share flyer designer app used by agents company-wide, saving approximately 3 weeks of manual design work and enabling self-service branded output.</li>
-                            <li>Rebuilt and standardized the company-wide e-campaign template system, modernizing HTML/CSS structure and improving rendering consistency across email clients for thousands of agent sends.</li>
-                            <li>Piloted Framer as a no-code/low-code web platform to replace Squarespace, evaluating component architecture, CMS capabilities, and deployment workflows for enterprise adoption.</li>
-                            <li>Collaborated with marketing and engineering teams to produce and hand off responsive digital assets, bridging the gap between design intent and technical implementation.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="block">
-                    <div class="header">
-                        <div>
-                            <div class="title">Visual Designer</div>
-                            <div class="company">iCanvas</div>
-                            <div class="date">2013 – 2023 · Chicago, IL</div>
-                        </div>
-                        <ul>
-                            <li>Produced all digital channel assets across web, mobile, social, and email in strict adherence to brand standards.</li>
-                            <li>Built prototypes and handed off high-fidelity assets to the engineering team as part of a cross-functional effort introducing new UX features, contributing to a 75% year-over-year conversion increase.</li>
-                            <li>Created wireframes and low/high-fidelity mockups for new product features, maintaining quality standards through developer handoff.</li>
-                            <li>Partnered closely with engineering teams to ensure design intent was accurately implemented across all digital surfaces.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="block">
-                    <div class="header">
-                        <div>
-                            <div class="title">Founder &amp; Front-End Developer</div>
-                            <div class="company">8ighty8 Studio</div>
-                            <div class="date">2025 – Present</div>
-                        </div>
-                        <ul>
-                            <li>Founded and operate an independent studio delivering front-end development, web design, and brand identity for clients across multiple industries.</li>
-                            <li>Build and ship client projects using React, Tailwind CSS, and Framer, covering component architecture, Figma prototyping, design systems, and custom front-end development.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="about-label">Education</div>
-            <div class="about-experience">
-                <div class="block">
-                    <div class="header">
-                        <div>
-                            <div class="title">DePaul University</div>
-                            <div class="company">Information Technology | Web Development Concentration</div>
-                            <div class="date">Currently Completing Bachelor's Degree</div>
-                            <ul>
-                                <li>Notable courses: Web Development I, Interactive Web Scripting, Applied OO Programming, and more.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="about-actions">
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <span class="icon" data-icon="document-text" aria-hidden="true"></span>
+                Resume
+            </a>
+            <a href="mailto:faris.kabaklic@gmail.com" class="btn btn-secondary">
+                <span class="icon" data-icon="envelope" aria-hidden="true"></span>
+                Email
+            </a>
+            <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <span class="icon" data-icon="linkedin" aria-hidden="true"></span>
+                LinkedIn
+            </a>
+        </div>
+
+        <section class="about-stack" aria-label="Toolbox">
+            <p class="about-stack__label">Toolbox</p>
+            <ul class="about-stack__grid">
+                <li class="about-stack__item"><img src="img/html.svg" alt="" width="48" height="48"><span>HTML</span></li>
+                <li class="about-stack__item"><img src="img/css.svg" alt="" width="48" height="48"><span>CSS</span></li>
+                <li class="about-stack__item"><img src="img/tailwind.svg" alt="" width="48" height="48"><span>Tailwind</span></li>
+                <li class="about-stack__item"><img src="img/js.svg" alt="" width="48" height="48"><span>JavaScript</span></li>
+                <li class="about-stack__item"><img src="img/react.svg" alt="" width="48" height="48"><span>React</span></li>
+                <li class="about-stack__item"><img src="img/NodeJS.svg" alt="" width="48" height="48"><span>Node.js</span></li>
+                <li class="about-stack__item"><img src="img/github.svg" alt="" width="48" height="48"><span>GitHub</span></li>
+                <li class="about-stack__item"><img src="img/figma.svg" alt="" width="48" height="48"><span>Figma</span></li>
+                <li class="about-stack__item"><img src="img/framer.svg" alt="" width="48" height="48"><span>Framer</span></li>
+                <li class="about-stack__item"><img src="img/photoshop.svg" alt="" width="48" height="48"><span>Photoshop</span></li>
+                <li class="about-stack__item"><img src="img/illustrator.svg" alt="" width="48" height="48"><span>Illustrator</span></li>
+                <li class="about-stack__item"><img src="img/indesign.svg" alt="" width="48" height="48"><span>InDesign</span></li>
+            </ul>
         </section>
     </main>
 
+        </div>
+
     <footer class="site-footer">
-        <div class="site-footer__inner">
-            <p class="site-footer__copy">&copy; 2026 Faris Kabaklic</p>
-            <div class="site-footer__links" aria-label="Footer">
-                <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer"><span class="icon" data-icon="github" aria-hidden="true"></span><span>GitHub</span></a>
-                <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer"><span class="icon" data-icon="linkedin" aria-hidden="true"></span><span>LinkedIn</span></a>
-                <a href="resume.pdf" target="_blank" rel="noopener noreferrer"><span class="icon" data-icon="document-text" aria-hidden="true"></span><span>Resume</span></a>
+        <div class="site-footer__panel">
+            <div class="site-footer__grid">
+                <div class="site-footer__brand">
+                    <p class="site-footer__tagline">I build interfaces that look intentional and work reliably.</p>
+                    <a href="mailto:faris.kabaklic@gmail.com" class="site-footer__cta">Let's work together <span class="icon" data-icon="arrow-top-right-on-square" aria-hidden="true"></span></a>
+                </div>
+                <nav class="site-footer__nav" aria-label="Footer">
+                    <p class="site-footer__heading">Navigate</p>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#projects">Work</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="site-footer__follow">
+                    <p class="site-footer__heading">Follow</p>
+                    <div class="site-footer__social">
+                        <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="GitHub">
+                            <span class="icon" data-icon="github" aria-hidden="true"></span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="LinkedIn">
+                            <span class="icon" data-icon="linkedin" aria-hidden="true"></span>
+                        </a>
+                        <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Resume">
+                            <span class="icon" data-icon="document-text" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="site-footer__watermark" aria-hidden="true">FARIS</p>
+            <div class="site-footer__bar">
+                <p class="site-footer__copy">&copy; 2026 Faris Kabaklic. All rights reserved.</p>
+                <p class="site-footer__credit">Designed &amp; built with care.</p>
             </div>
         </div>
     </footer>

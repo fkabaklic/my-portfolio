@@ -26,40 +26,32 @@
     </script>
 </head>
 <body>
-    <nav class="site-nav">
+        <div class="page-shell">
+    <nav class="site-nav" aria-label="Primary">
         <div class="site-nav__inner">
-            <a href="index.html" class="site-nav__brand">
-                <img src="img/logo.svg" class="site-nav__mark" alt="" width="26" height="20">
-                <span class="site-nav__name">Faris Kabaklic</span>
-            </a>
-            <div class="site-nav__actions">
-                <div class="site-nav__links">
-                    <a href="index.html#projects" class="nav-link is-active">Work</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="index.html#contact" class="nav-link">Contact</a>
-                </div>
-                <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
-                    <span class="icon theme-toggle__icon theme-toggle__icon--moon" data-icon="moon" aria-hidden="true"></span>
-                    <span class="icon theme-toggle__icon theme-toggle__icon--sun" data-icon="sun" aria-hidden="true" hidden></span>
-                </button>
-                <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+            <div class="site-nav__links">
+                <a href="index.html#projects" class="nav-link is-active">Work</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
             </div>
+            <span class="site-nav__divider" aria-hidden="true"></span>
+            <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
+                <span class="icon theme-toggle__icon theme-toggle__icon--moon" data-icon="moon" aria-hidden="true"></span>
+                <span class="icon theme-toggle__icon theme-toggle__icon--sun" data-icon="sun" aria-hidden="true" hidden></span>
+            </button>
         </div>
     </nav>
 
-    <div class="menu-overlay" id="menuOverlay">
-        <a href="index.html#projects">Work</a>
-        <a href="about.html">About</a>
-        <a href="index.html#contact">Contact</a>
-    </div>
-
-    <div id="main-content">
+<div id="main-content">
+        <figure class="project-bleed">
+            <img src="img/fitly.png" alt="Fitly AI fitness trainer branding" width="1600" height="900" fetchpriority="high">
+        </figure>
         <div class="container project-detail project-detail--case-study">
             <aside class="text-content project-detail__intro">
+                <a href="index.html#projects" class="project-back">
+                    <span class="icon" data-icon="arrow-left" aria-hidden="true"></span>
+                    <span>Work</span>
+                </a>
                 <p class="project-eyebrow">Mobile product concept · Fitness + AI</p>
                 <h1>Fitly</h1>
                 <h2>An AI fitness trainer concept with app flows, visual identity, and product direction.</h2>
@@ -73,11 +65,7 @@
             </aside>
 
             <div class="project-detail__body">
-                <figure class="image-container project-detail__hero">
-                    <img src="img/fitly_branding.png" alt="Fitly branding" loading="lazy">
-                </figure>
-
-                <section class="case-section">
+<section class="case-section">
                     <h2>The brief.</h2>
                     <p>Fitly came from a personal observation: new gym users often struggle to identify equipment, choose the right exercises, or know what to do next. The concept explores an AI-based personal trainer that generates workouts by muscle group, difficulty level, and available equipment.</p>
                     <p>The goal was to shape a product that feels useful before it feels flashy, as a fitness companion that makes the gym less intimidating and gives users clear next actions.</p>
@@ -111,13 +99,49 @@
     </div>
 
 
+    <div class="site-footer__next">
+        <a href="8ighty8-supply.html" class="footer-next">
+            <span class="footer-next__label">Next project</span>
+            <span class="footer-next__title">8ighty8 Supply<span class="icon footer-next__icon" data-icon="arrow-right" aria-hidden="true"></span></span>
+        </a>
+    </div>
+    </div>
+
     <footer class="site-footer">
-        <div class="site-footer__inner">
-            <p class="site-footer__copy">&copy; 2026 Faris Kabaklic</p>
-            <div class="site-footer__links" aria-label="Footer">
-                <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer"><span class="icon" data-icon="github" aria-hidden="true"></span><span>GitHub</span></a>
-                <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer"><span class="icon" data-icon="linkedin" aria-hidden="true"></span><span>LinkedIn</span></a>
-                <a href="resume.pdf" target="_blank" rel="noopener noreferrer"><span class="icon" data-icon="document-text" aria-hidden="true"></span><span>Resume</span></a>
+        <div class="site-footer__panel">
+            <div class="site-footer__grid">
+                <div class="site-footer__brand">
+                    <p class="site-footer__tagline">I build interfaces that look intentional and work reliably.</p>
+                    <a href="mailto:faris.kabaklic@gmail.com" class="site-footer__cta">Let's work together <span class="icon" data-icon="arrow-top-right-on-square" aria-hidden="true"></span></a>
+                </div>
+                <nav class="site-footer__nav" aria-label="Footer">
+                    <p class="site-footer__heading">Navigate</p>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#projects">Work</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="site-footer__follow">
+                    <p class="site-footer__heading">Follow</p>
+                    <div class="site-footer__social">
+                        <a href="https://github.com/fkabaklic" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="GitHub">
+                            <span class="icon" data-icon="github" aria-hidden="true"></span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="LinkedIn">
+                            <span class="icon" data-icon="linkedin" aria-hidden="true"></span>
+                        </a>
+                        <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="site-footer__social-link" aria-label="Resume">
+                            <span class="icon" data-icon="document-text" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="site-footer__watermark" aria-hidden="true">FARIS</p>
+            <div class="site-footer__bar">
+                <p class="site-footer__copy">&copy; 2026 Faris Kabaklic. All rights reserved.</p>
+                <p class="site-footer__credit">Designed &amp; built with care.</p>
             </div>
         </div>
     </footer>

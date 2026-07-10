@@ -7,6 +7,9 @@ const ICON_SOURCES = {
   clock: `${HEROICONS_CDN}/24/outline/clock.svg`,
   envelope: `${HEROICONS_CDN}/24/outline/envelope.svg`,
   'document-text': `${HEROICONS_CDN}/24/outline/document-text.svg`,
+  'arrow-left': `${HEROICONS_CDN}/24/outline/arrow-left.svg`,
+  'arrow-right': `${HEROICONS_CDN}/24/outline/arrow-right.svg`,
+  'arrow-top-right-on-square': `${HEROICONS_CDN}/24/outline/arrow-top-right-on-square.svg`,
   github: `${SIMPLE_ICONS_CDN}/github.svg`,
   linkedin: `${SIMPLE_ICONS_CDN}/linkedin.svg`,
 };
