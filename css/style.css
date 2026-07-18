@@ -1861,7 +1861,7 @@ body.menu-open nav {
     margin: 0;
     font-size: clamp(1.25rem, 2.4vw, 1.75rem);
     font-weight: var(--fw-medium);
-    line-height: var(--leading-snug);
+    line-height: 1.45;
     letter-spacing: var(--tracking-snug);
     color: var(--text);
 }
@@ -1982,8 +1982,10 @@ body.menu-open nav {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: var(--space-4);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--about-border);
+    border-left: 1px solid var(--about-border);
 }
 
 .about-stack__item {
@@ -1993,23 +1995,26 @@ body.menu-open nav {
     justify-content: center;
     gap: var(--space-3);
     text-align: center;
-    padding: var(--space-6) var(--space-3);
-    border: 1px solid var(--about-border);
-    border-radius: var(--radius-md);
-    background: var(--surface);
-    transition: border-color var(--duration-fast) ease, transform var(--duration-fast) ease;
+    padding: var(--space-10) var(--space-4);
+    border-right: 1px solid var(--about-border);
+    border-bottom: 1px solid var(--about-border);
+    background: transparent;
+    transition: background-color var(--duration-fast) ease;
 }
 
 .about-stack__item:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
+    background-color: var(--stack-color);
 }
 
 .about-stack__item img {
-    width: var(--space-16);
-    height: var(--space-16);
+    width: var(--space-12);
+    height: var(--space-12);
     object-fit: contain;
-    border-radius: var(--radius-sm);
+    transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.about-stack__item:hover img {
+    transform: scale(1.2);
 }
 
 .about-stack__item span {
@@ -2474,16 +2479,15 @@ body.menu-open nav {
 
     .about-stack__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--space-3);
     }
 
     .about-stack__item {
-        padding: var(--space-4) var(--space-2);
+        padding: var(--space-8) var(--space-3);
     }
 
     .about-stack__item img {
-        width: calc(var(--space-12) + var(--space-1));
-        height: calc(var(--space-12) + var(--space-1));
+        width: calc(var(--space-10) + var(--space-1));
+        height: calc(var(--space-10) + var(--space-1));
     }
 
     .about-work-cta {

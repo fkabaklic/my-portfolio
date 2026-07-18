@@ -382,8 +382,23 @@ function initFooterReveal() {
   }
 }
 
+function initDynamicDates() {
+  const now = new Date();
+  const year = String(now.getFullYear());
+  const month = now.toLocaleString('en-US', { month: 'long' });
+
+  document.querySelectorAll('[data-year]').forEach((el) => {
+    el.textContent = year;
+  });
+
+  document.querySelectorAll('[data-availability-month]').forEach((el) => {
+    el.textContent = month;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   applyDarkModePreference();
+  initDynamicDates();
   initFooterReveal();
   updateDarkModeToggleLabels();
   initSectionReveal();
