@@ -65,7 +65,7 @@ function initSectionReveal() {
   }
 
   const sections = document.querySelectorAll(
-    '#main-content > section:not(.hero):not(.under-hood-section):not(.contact-cta), .about-grid > section, .container'
+    '#main-content > section:not(.hero):not(.services-section):not(.contact-cta), .about-grid > section, .container'
   );
 
   if (sections.length === 0) {
@@ -97,9 +97,8 @@ function initSectionReveal() {
 
 const SCROLL_REVEAL_SELECTOR = [
   '.projects .card',
-  '.under-hood-section .section-header',
-  '.under-hood-section .under-hood-intro',
-  '.under-hood-section .builtby__code',
+  '.services-section .section-header',
+  '.services-section .services-list__item',
 ].join(', ');
 
 function observeScrollReveal(items, options) {
