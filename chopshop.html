@@ -7,14 +7,7 @@
     <title>ChopShop | Faris Kabaklic</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
-        <script>
-        (function () {
-            var stored = localStorage.getItem('darkMode');
-            var theme = stored === 'disabled' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5DGVQ6FV3"></script>
@@ -28,22 +21,33 @@
 <body>
         <div class="page-shell">
     <nav class="site-nav" aria-label="Primary">
-        <div class="site-nav__inner">
-            <div class="site-nav__links">
-                <a href="index.html#projects" class="nav-link is-active">Work</a>
-                <a href="index.html#services" class="nav-link">Services</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
+        <div class="site-nav__panel">
+            <div class="site-nav__bar">
+                <button type="button" class="site-nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDropdown">
+                    <span class="site-nav__toggle-bars" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="site-nav__toggle-close" aria-hidden="true"></span>
+                </button>
+                <a href="index.html" class="site-nav__logo" aria-label="Faris Kabaklic home">
+                    <img src="img/logo.svg" alt="" width="28" height="28">
+                </a>
+                <a href="index.html#contact" class="site-nav__contact">Contact</a>
             </div>
-            <span class="site-nav__divider" aria-hidden="true"></span>
-            <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
-                <span class="icon theme-toggle__icon theme-toggle__icon--moon" data-icon="moon" aria-hidden="true"></span>
-                <span class="icon theme-toggle__icon theme-toggle__icon--sun" data-icon="sun" aria-hidden="true" hidden></span>
-            </button>
+            <div class="site-nav__dropdown" id="navDropdown" hidden>
+                <ul class="site-nav__list">
+                    <li><a href="index.html#more-work">Work</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
-
 <div id="main-content">
+        <section class="project-case band-light">
         <div class="container">
             <div class="text-content">
                 <h1>ChopShop</h1>
@@ -63,23 +67,33 @@
                 <img src="img/chopshop_full.png" alt="ChopShop website screenshot" loading="lazy">
             </div>
         </div>
+        </section>
     </div>
 
-
-        </div>
-
-    <footer class="site-footer">
+        <footer class="site-footer">
         <div class="site-footer__panel">
             <div class="site-footer__grid">
                 <div class="site-footer__brand">
-                    <p class="site-footer__tagline">I build interfaces that look intentional and work reliably.</p>
-                    <a href="mailto:faris.kabaklic@gmail.com" class="site-footer__cta">Let's work together <span class="icon" data-icon="arrow-top-right-on-square" aria-hidden="true"></span></a>
+                    <p class="site-footer__tagline">I build interfaces that look intentional and work&nbsp;reliably.</p>
+                    <a href="mailto:faris.kabaklic@gmail.com" class="site-footer__cta">
+                        Let's work&nbsp;together
+                        <span class="icon" data-icon="arrow-top-right-on-square" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div class="site-footer__services">
+                    <p class="site-footer__heading">Services</p>
+                    <ul>
+                        <li><a href="index.html#services">Front-End Development</a></li>
+                        <li><a href="index.html#services">Design-to-Code</a></li>
+                        <li><a href="index.html#services">Web Applications</a></li>
+                        <li><a href="index.html#services">UI Systems</a></li>
+                    </ul>
                 </div>
                 <nav class="site-footer__nav" aria-label="Footer">
                     <p class="site-footer__heading">Navigate</p>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#projects">Work</a></li>
+                        <li><a href="index.html#more-work">Work</a></li>
                         <li><a href="index.html#services">Services</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
@@ -100,10 +114,9 @@
                     </div>
                 </div>
             </div>
-            <p class="site-footer__watermark" aria-hidden="true">FARIS</p>
             <div class="site-footer__bar">
-                <p class="site-footer__copy">&copy; <span data-year>2026</span> Faris Kabaklic. All rights reserved.</p>
-                <p class="site-footer__credit">Designed &amp; built with care.</p>
+                <p class="site-footer__copy">&copy; <span data-year>2026</span> Faris Kabaklic. All rights&nbsp;reserved.</p>
+                <p class="site-footer__credit">Designed &amp; built with&nbsp;care.</p>
             </div>
         </div>
     </footer>

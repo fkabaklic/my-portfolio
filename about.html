@@ -7,14 +7,7 @@
     <title>About | Faris Kabaklic</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
-        <script>
-        (function () {
-            var stored = localStorage.getItem('darkMode');
-            var theme = stored === 'disabled' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.png">
     <!-- Google tag (gtag.js) -->
@@ -27,128 +20,147 @@
     </script>
 </head>
 <body>
-        <div class="page-shell">
+    <div class="page-shell">
     <nav class="site-nav" aria-label="Primary">
-        <div class="site-nav__inner">
-            <div class="site-nav__links">
-                <a href="index.html#projects" class="nav-link">Work</a>
-                <a href="index.html#services" class="nav-link">Services</a>
-                <a href="about.html" class="nav-link is-active">About</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
+        <div class="site-nav__panel">
+            <div class="site-nav__bar">
+                <button type="button" class="site-nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navDropdown">
+                    <span class="site-nav__toggle-bars" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="site-nav__toggle-close" aria-hidden="true"></span>
+                </button>
+                <a href="index.html" class="site-nav__logo" aria-label="Faris Kabaklic home">
+                    <img src="img/logo.svg" alt="" width="28" height="28">
+                </a>
+                <a href="index.html#contact" class="site-nav__contact">Contact</a>
             </div>
-            <span class="site-nav__divider" aria-hidden="true"></span>
-            <button class="theme-toggle dark-toggle" type="button" aria-label="Switch to dark mode">
-                <span class="icon theme-toggle__icon theme-toggle__icon--moon" data-icon="moon" aria-hidden="true"></span>
-                <span class="icon theme-toggle__icon theme-toggle__icon--sun" data-icon="sun" aria-hidden="true" hidden></span>
-            </button>
+            <div class="site-nav__dropdown" id="navDropdown" hidden>
+                <ul class="site-nav__list">
+                    <li><a href="index.html#more-work">Work</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
-
 <main class="about-page">
-        <h1 class="about-tagline about-reveal">Designer turned developer</h1>
-
-        <div class="about-summary about-reveal">
-            <p>
-                10+ years across web, mobile, and brand. Currently completing a B.S. in Web Development at DePaul, I bring design craft and hands-on front-end engineering - fluent in React, Node.js, and modern CSS - with a track record of shipping real tools used by real teams. I build things that look intentional and work reliably.
-            </p>
-        </div>
-
-        <div class="about-actions about-reveal">
-            <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                <span class="icon" data-icon="document-text" aria-hidden="true"></span>
-                Resume
-            </a>
-            <a href="mailto:faris.kabaklic@gmail.com" class="btn btn-secondary">
-                <span class="icon" data-icon="envelope" aria-hidden="true"></span>
-                Email
-            </a>
-            <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                <span class="icon" data-icon="linkedin" aria-hidden="true"></span>
-                LinkedIn
-            </a>
-        </div>
-
-        <section class="about-experience about-reveal" aria-label="Experience">
-            <p class="about-section-label">Experience</p>
-            <ul class="about-experience__list">
-                <li class="about-experience__item">
-                    <div class="about-experience__role">
-                        <span class="about-experience__title">Senior Graphic Designer</span>
-                        <span class="about-experience__company">@properties</span>
-                    </div>
-                    <span class="about-experience__date">2023 - Present</span>
-                </li>
-                <li class="about-experience__item">
-                    <div class="about-experience__role">
-                        <span class="about-experience__title">Visual Designer</span>
-                        <span class="about-experience__company">iCanvas</span>
-                    </div>
-                    <span class="about-experience__date">2013 - 2023</span>
-                </li>
-                <li class="about-experience__item">
-                    <div class="about-experience__role">
-                        <span class="about-experience__title">Founder &amp; Front-End Developer</span>
-                        <span class="about-experience__company">8ighty8 Studio</span>
-                    </div>
-                    <span class="about-experience__date">2025 - Present</span>
-                </li>
-            </ul>
-        </section>
-
-        <section class="about-stack about-reveal" aria-label="Toolbox">
-            <p class="about-stack__label">Toolbox</p>
-            <div class="about-stack__groups">
-                <div class="about-stack__group">
-                    <h2 class="about-stack__group-label">Development</h2>
-                    <ul class="about-stack__grid">
-                        <li class="about-stack__item" style="--stack-color: #FF9A00"><img src="img/html.svg" alt="" width="48" height="48"><span>HTML</span></li>
-                        <li class="about-stack__item" style="--stack-color: #31A8FF"><img src="img/css.svg" alt="" width="48" height="48"><span>CSS</span></li>
-                        <li class="about-stack__item" style="--stack-color: #38BDF8"><img src="img/tailwind.svg" alt="" width="48" height="48"><span>Tailwind</span></li>
-                        <li class="about-stack__item" style="--stack-color: #F7DF1E"><img src="img/js.svg" alt="" width="48" height="48"><span>JavaScript</span></li>
-                        <li class="about-stack__item" style="--stack-color: #61DAFB"><img src="img/react.svg" alt="" width="48" height="48"><span>React</span></li>
-                        <li class="about-stack__item" style="--stack-color: #0ACF83"><img src="img/NodeJS.svg" alt="" width="48" height="48"><span>Node.js</span></li>
-                        <li class="about-stack__item" style="--stack-color: #24292F"><img src="img/github.svg" alt="" width="48" height="48"><span>GitHub</span></li>
-                    </ul>
+        <section class="about-hero band-dark">
+            <div class="about-hero__inner">
+                <h1 class="about-tagline about-reveal">Designer turned developer</h1>
+                <div class="about-summary about-reveal">
+                    <p>
+                        10+ years across web, mobile, and brand. Currently completing a B.S. in Web Development at DePaul, I bring design craft and hands-on front-end engineering - fluent in React, Node.js, and modern CSS - with a track record of shipping real tools used by real teams. I build things that look intentional and work&nbsp;reliably.
+                    </p>
                 </div>
-                <div class="about-stack__group">
-                    <h2 class="about-stack__group-label">Design</h2>
-                    <ul class="about-stack__grid">
-                        <li class="about-stack__item" style="--stack-color: #F24E1E"><img src="img/figma.svg" alt="" width="48" height="48"><span>Figma</span></li>
-                        <li class="about-stack__item" style="--stack-color: #0055FF"><img src="img/framer.svg" alt="" width="48" height="48"><span>Framer</span></li>
-                        <li class="about-stack__item" style="--stack-color: #001E36"><img src="img/photoshop.svg" alt="" width="48" height="48"><span>Photoshop</span></li>
-                        <li class="about-stack__item" style="--stack-color: #FF9A00"><img src="img/illustrator.svg" alt="" width="48" height="48"><span>Illustrator</span></li>
-                        <li class="about-stack__item" style="--stack-color: #49021F"><img src="img/indesign.svg" alt="" width="48" height="48"><span>InDesign</span></li>
-                    </ul>
+                <div class="about-actions about-reveal">
+                    <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <span class="icon" data-icon="document-text" aria-hidden="true"></span>
+                        Resume
+                    </a>
+                    <a href="mailto:faris.kabaklic@gmail.com" class="btn btn-secondary">
+                        <span class="icon" data-icon="envelope" aria-hidden="true"></span>
+                        Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/hirefaris" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <span class="icon" data-icon="linkedin" aria-hidden="true"></span>
+                        LinkedIn
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="about-work-cta about-reveal">
-            <div class="about-work-cta__copy">
-                <h2 class="about-work-cta__title">See what I've been building</h2>
-                <p class="about-work-cta__text">React apps, marketplaces, and product interfaces - shipped with the same care I bring to design systems and brand work.</p>
+        <section class="about-body band-light">
+            <div class="about-body__inner">
+                <section class="about-experience about-reveal" aria-label="Experience">
+                    <p class="about-section-label">Experience</p>
+                    <ul class="about-experience__list">
+                        <li class="about-experience__item">
+                            <div class="about-experience__role">
+                                <span class="about-experience__title">Senior Graphic Designer</span>
+                                <span class="about-experience__company">@properties</span>
+                            </div>
+                            <span class="about-experience__date">2023 - Present</span>
+                        </li>
+                        <li class="about-experience__item">
+                            <div class="about-experience__role">
+                                <span class="about-experience__title">Visual Designer</span>
+                                <span class="about-experience__company">iCanvas</span>
+                            </div>
+                            <span class="about-experience__date">2013 - 2023</span>
+                        </li>
+                        <li class="about-experience__item">
+                            <div class="about-experience__role">
+                                <span class="about-experience__title">Founder &amp; Front-End Developer</span>
+                                <span class="about-experience__company">8ighty8 Studio</span>
+                            </div>
+                            <span class="about-experience__date">2025 - Present</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="about-stack about-reveal" aria-label="Toolbox">
+                    <p class="about-stack__label">Toolbox</p>
+                    <div class="about-stack__groups">
+                        <div class="about-stack__group">
+                            <h2 class="about-stack__group-label">Development</h2>
+                            <ul class="about-stack__grid">
+                                <li class="about-stack__item"><img src="img/html.svg" alt="" width="48" height="48"><span>HTML</span></li>
+                                <li class="about-stack__item"><img src="img/css.svg" alt="" width="48" height="48"><span>CSS</span></li>
+                                <li class="about-stack__item"><img src="img/tailwind.svg" alt="" width="48" height="48"><span>Tailwind</span></li>
+                                <li class="about-stack__item"><img src="img/js.svg" alt="" width="48" height="48"><span>JavaScript</span></li>
+                                <li class="about-stack__item"><img src="img/react.svg" alt="" width="48" height="48"><span>React</span></li>
+                                <li class="about-stack__item"><img src="img/NodeJS.svg" alt="" width="48" height="48"><span>Node.js</span></li>
+                                <li class="about-stack__item"><img src="img/github.svg" alt="" width="48" height="48"><span>GitHub</span></li>
+                            </ul>
+                        </div>
+                        <div class="about-stack__group">
+                            <h2 class="about-stack__group-label">Design</h2>
+                            <ul class="about-stack__grid">
+                                <li class="about-stack__item"><img src="img/figma.svg" alt="" width="48" height="48"><span>Figma</span></li>
+                                <li class="about-stack__item"><img src="img/framer.svg" alt="" width="48" height="48"><span>Framer</span></li>
+                                <li class="about-stack__item"><img src="img/photoshop.svg" alt="" width="48" height="48"><span>Photoshop</span></li>
+                                <li class="about-stack__item"><img src="img/illustrator.svg" alt="" width="48" height="48"><span>Illustrator</span></li>
+                                <li class="about-stack__item"><img src="img/indesign.svg" alt="" width="48" height="48"><span>InDesign</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <a href="index.html#projects" class="btn btn-primary">
-                View projects
-                <span class="icon" data-icon="arrow-right" aria-hidden="true"></span>
-            </a>
+        </section>
+
+        <section class="contact-cta band-light about-work-cta" aria-label="View projects">
+            <div class="contact-cta-main">
+                <div class="contact-cta-content">
+                    <h2 class="contact-cta-title">See what I've been building</h2>
+                </div>
+                <div class="contact-cta-aside">
+                    <p class="contact-cta-sub">React apps, marketplaces, and product interfaces — shipped with the same care I bring to design systems and brand work.</p>
+                    <div class="contact-cta-actions">
+                        <a href="index.html#more-work" class="btn btn-muted">View projects<span class="icon" data-icon="arrow-right" aria-hidden="true"></span></a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="site-footer__panel">
             <div class="site-footer__grid">
                 <div class="site-footer__brand">
-                    <p class="site-footer__tagline">I build interfaces that look intentional and work reliably.</p>
-                    <a href="mailto:faris.kabaklic@gmail.com" class="site-footer__cta">Let's work together <span class="icon" data-icon="arrow-top-right-on-square" aria-hidden="true"></span></a>
+                    <p class="site-footer__tagline">I build interfaces that look intentional and work&nbsp;reliably.</p>
+                    <a href="mailto:faris.kabaklic@gmail.com" class="site-footer__cta">Let's work&nbsp;together <span class="icon" data-icon="arrow-top-right-on-square" aria-hidden="true"></span></a>
                 </div>
                 <nav class="site-footer__nav" aria-label="Footer">
                     <p class="site-footer__heading">Navigate</p>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#projects">Work</a></li>
+                        <li><a href="index.html#more-work">Work</a></li>
                         <li><a href="index.html#services">Services</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
@@ -169,10 +181,10 @@
                     </div>
                 </div>
             </div>
-            <p class="site-footer__watermark" aria-hidden="true">FARIS</p>
+            <p class="site-footer__watermark" aria-hidden="true">Faris Kabaklic</p>
             <div class="site-footer__bar">
-                <p class="site-footer__copy">&copy; <span data-year>2026</span> Faris Kabaklic. All rights reserved.</p>
-                <p class="site-footer__credit">Designed &amp; built with care.</p>
+                <p class="site-footer__copy">&copy; <span data-year>2026</span> Faris Kabaklic. All rights&nbsp;reserved.</p>
+                <p class="site-footer__credit">Designed &amp; built with&nbsp;care.</p>
             </div>
         </div>
     </footer>
