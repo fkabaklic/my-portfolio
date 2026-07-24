@@ -36,7 +36,7 @@ function initSectionReveal() {
   }
 
   const sections = document.querySelectorAll(
-    '#main-content > section:not(.hero):not(.work-section):not(.services-section):not(.more-work):not(.contact-cta), .about-grid > section, .container'
+    '#main-content > section:not(.hero):not(.work-section):not(.services-section):not(.more-work):not(.contact-cta):not(.project-case), .about-grid > section'
   );
 
   if (sections.length === 0) {
@@ -103,10 +103,18 @@ function initScrollReveal() {
     }
   );
 
-  observeScrollReveal(document.querySelectorAll('.more-work__item'), {
+  observeScrollReveal(document.querySelectorAll('.more-work__item, .work-index__item'), {
     threshold: 0.15,
     rootMargin: '0px 0px -8% 0px',
   });
+
+  observeScrollReveal(
+    document.querySelectorAll('.case-section, .image-container'),
+    {
+      threshold: 0.12,
+      rootMargin: '0px 0px -6% 0px',
+    }
+  );
 
   observeScrollReveal(document.querySelectorAll('.contact-cta-main'), {
     threshold: 0.15,
